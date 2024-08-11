@@ -1,0 +1,340 @@
+<!-- START OF TOPIC -->
+# 2.2. The Limit of a Function
+
+Having seen in the preceding section how limits arise when we want to find the tangent to a curve or the velocity of an object, we now turn our attention to limits in general and numerical and graphical methods for computing them.
+
+Let's investigate the behavior of the function $f$ defined by
+
+$f(x)=x^{2}-x+2$ for values of $x$ near 2 . The following table gives values of $f(x)$ for values of $x$ close to 2 but not equal to 2 .
+
+| $x$ | $f(x)$ |
+| :---: | :---: |
+| 1.0 | 2.000000 |
+| 1.5 | 2.750000 |
+| 1.8 | 3.440000 |
+| 1.9 | 3.710000 |
+| 1.95 | 3.852500 |
+| 1.99 | 3.970100 |
+| 1.995 | 3.985025 |
+| 1.999 | 3.997001 |
+| 3.0 | 8.000000 |
+| 2.5 | 5.750000 |
+| 2.2 | 4.640000 |
+| 2.1 | 4.310000 |
+| 2.05 | 4.152500 |
+| 2.01 | 4.030100 |
+| 2.005 | 4.015025 |
+| 2.001 | 4.003001 |
+
+From the table and the graph of $f$ (a parabola) shown in Figure 1 we see that the closer $x$ is to 2 (on either side of 2 ), the closer $f(x)$ is to 4 . In fact, it appears that we can make the values of $f(x)$ as close as we like to 4 by taking $x$ sufficiently close to 2 . We express this by saying "the limit of the function $f(x)=x^{2}-x+2$ as $x$ approaches 2 is equal to 4 ." The notation for this is
+
+$$
+\lim _{x \rightarrow 2}\left(x^{2}-x+2\right)=4
+$$
+
+## Figure 1
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-03.jpg?height=620&width=610&top_left_y=991&top_left_x=752)
+
+Details
+
+In general, we use the following notation.
+
+Suppose $f(x)$ is defined when $x$ is near the number $a$. (This means that $f$ is defined on some open interval that contains $a$, except possibly at $a$ itself.) Then we write
+
+$$
+\lim _{x \rightarrow a} f(x)=L
+$$
+
+and say
+
+"the limit of $f(x)$, as $x$ approaches $a$, equals $L$ "
+
+if we can make the values of $f(x)$ arbitrarily close to $L$ (as close to $L$ as we like) by restricting $x$ to be sufficiently close to $a$ (on either side of $a$ ) but not equal to $a$.
+
+## Explore It: Graphical Idea of a Limit
+
+## Explore It
+
+CONCEPT
+
+EXAMPLE VIDEO
+
+EXPLORE \& TEST
+
+## YOU WILL LEARN ABOUT:
+
+How to find the limit of a function using its graph.
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-05.jpg?height=646&width=1480&top_left_y=612&top_left_x=342)
+
+Roughly speaking, this says that the values of $f(x)$ approach $L$ as $x$ approaches $a$. In other words, the values of $f(x)$ tend to get closer and closer to the number $L$ as $x$ gets closer and closer to the number $a$ (from either side of $a$ ) but $x \neq a$. (A more precise definition will be given in Section 2.4.)
+
+An alternative notation for
+
+$$
+\lim _{x \rightarrow a} f(x)=L
+$$
+
+is
+
+$$
+f(x) \rightarrow L \quad \text { as } \quad x \rightarrow a
+$$
+
+which is usually read " $f(x)$ approaches $L$ as $x$ approaches $a$."
+
+Notice the phrase "but $x \neq a$ " in the definition of limit. This means that in finding the limit of $f(x)$ as $x$ approaches $a$, we never consider $x=a$. In fact, $f(x)$ need not even be defined when $x=a$. The only thing that matters is how $f$ is defined near $a$.
+
+Figure 2 shows the graphs of three functions. Note that in part (c), $f(a)$ is not defined and in part (b), $f(a) \neq L$. But in each case, regardless of what happens at $a$, it is true that $\lim _{x \rightarrow a} f(x)=L$.
+
+Figure 2
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-07.jpg?height=336&width=437&top_left_y=201&top_left_x=302)
+
+(a)
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-07.jpg?height=336&width=436&top_left_y=201&top_left_x=839)
+
+(b)
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-07.jpg?height=339&width=439&top_left_y=199&top_left_x=1380)
+
+(c)
+
+$\rightarrow$ Details
+
+$\lim _{x \rightarrow a} f(x)=L$ in all three cases
+
+<!-- START OF EXAMPLE -->
+## Example 1
+
+Guess the value of $\lim _{x \rightarrow 1} \frac{x-1}{x^{2}-1}$.
+
+SOLUTION Notice that the function $f(x)=(x-1) /\left(x^{2}-1\right)$ is not defined when $x=1$, but that doesn't matter because the definition of $\lim _{x \rightarrow a} f(x)$ says that we consider values of $x$ that are close to $a$ but not equal to $a$.
+
+The tables below give values of $f(x)$ (correct to six decimal places) for values of $x$ that approach 1 (but are not equal to 1 ). On the basis of the values in the tables, we make the guess that
+
+$$
+\lim _{x \rightarrow 1} \frac{x-1}{x^{2}-1}=0.5
+$$
+
+| $x<1$ | $f(x)$ |
+| :--- | :---: |
+| 0.5 | 0.666667 |
+| 0.9 | 0.526316 |
+| 0.99 | 0.502513 |
+| 0.999 | 0.500250 |
+| 0.9999 | 0.500025 |
+
+| $x>1$ | $f(x)$ |
+| :--- | :---: |
+| 1.5 | 0.400000 |
+| 1.1 | 0.476190 |
+| 1.01 | 0.497512 |
+| 1.001 | 0.499750 |
+| 1.0001 | 0.499975 |
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-08.jpg?height=193&width=326&top_left_y=779&top_left_x=867)
+
+$\rightarrow$ Details
+
+Example 1 is illustrated by the graph of $f$ in Figure 3. Now let's change $f$ slightly by giving it the value 2 when $x=1$ and calling the resulting function $g$ :
+<!-- END OF EXAMPLE -->
+
+$$
+g(x)= \begin{cases}\frac{x-1}{x^{2}-1} & \text { if } x \neq 1 \\ 2 & \text { if } x=1\end{cases}
+$$
+
+Figure 3
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-09.jpg?height=596&width=571&top_left_y=206&top_left_x=777)
+
+Details
+
+This new function $g$ still has the same limit as $x$ approaches 1 . (See Figure 4.)
+
+Figure 4
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-09.jpg?height=593&width=572&top_left_y=1517&top_left_x=774)
+
+Details
+
+<!-- START OF EXAMPLE -->
+## Example 2
+
+Estimate the value of $\lim _{t \rightarrow 0} \frac{\sqrt{t^{2}+9}-3}{t^{2}}$.
+
+SOLUTION The table lists values of the function for several values of $t$ near 0 .
+
+| $t$ | $\frac{\sqrt{t^{2}+9}-3}{t^{2}}$ |
+| :--- | :--- |
+| $\pm 1.0$ | $0.162277 \ldots$ |
+| $\pm 0.5$ | $0.165525 \ldots$ |
+| $\pm 0.1$ | $0.166620 \ldots$ |
+| $\pm 0.05$ | $0.166655 \ldots$ |
+| 0.01 | $0.166666 \ldots$ |
+
+As $t$ approaches 0 , the values of the function seem to approach $0.1666666 \ldots$ and so we guess that
+
+$$
+\lim _{t \rightarrow 0} \frac{\sqrt{t^{2}+9}-3}{t^{2}}=\frac{1}{6}
+$$
+
+In Example 2 what would have happened if we had taken even smaller values of $t$ ? The table below shows the results from one calculator; you can see that something strange seems to be happening.
+
+| $t$ | $\frac{\sqrt{t^{2}+9}-3}{t^{2}}$ |
+| :--- | :--- |
+| 0.001 | 0.166667 |
+| $\pm 0.0001$ | 0.166670 |
+| $\pm 0.00001$ | 0.167000 |
+| $\pm 0.000001$ | 0.000000 |
+
+If you try these calculations on your own calculator you might get different values, but eventually you will get the value 0 if you make $t$ sufficiently small. Does this mean that the answer is really 0 instead of $\frac{1}{6}$ ? No, the value of the limit is $\frac{1}{6}$, as we will show in the next section. The problem is that the calculator gave false values because $\sqrt{t^{2}+9}$ is very close to 3 when $t$ is small. (In fact, when $t$ is sufficiently small, a calculator's value for $\sqrt{t^{2}+9}$ is $3.000 \ldots$ to as many digits as the calculator is capable of carrying.)
+
+Something similar happens when we try to graph the function
+
+$$
+f(t)=\frac{\sqrt{t^{2}+9}-3}{t^{2}}
+$$
+
+of Example 2 on a graphing calculator or computer. Parts (a) and (b) of Figure 5 show quite accurate graphs of $f$, and when we use the trace mode (if available) we can estimate easily that the limit is about $\frac{1}{6}$. But if we zoom in too much, as in parts (c) and (d), then we get inaccurate graphs, again because of rounding errors from the subtraction.
+<!-- END OF EXAMPLE -->
+
+## Figure 5
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-12.jpg?height=233&width=350&top_left_y=214&top_left_x=302)
+
+(a) $-5 \leqslant t \leqslant 5$
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-12.jpg?height=233&width=344&top_left_y=214&top_left_x=695)
+
+(b) $-0.1 \leqslant t \leqslant 0.1$
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-12.jpg?height=233&width=347&top_left_y=214&top_left_x=1084)
+
+(c) $-10^{-6} \leqslant t \leqslant 10^{-6}$
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-12.jpg?height=233&width=334&top_left_y=214&top_left_x=1470)
+
+(d) $-10^{-7} \leq t \leq 10^{-7}$
+
+Details
+
+www.stewartcalculus.com
+
+For a further explanation of why calculators sometimes give false values, click on Lies My Calculator and Computer Told Me. In particular, see the section called The Perils of Subtraction.
+
+<!-- START OF EXAMPLE -->
+## Example 3
+
+Guess the value of $\lim _{x \rightarrow 0} \frac{\sin x}{x}$.
+
+SOLUTION The function $f(x)=(\sin x) / x$ is not defined when $x=0$
+
+. Using a calculator (and remembering that, if $x \in \mathbb{R}, \sin x$ means the sine of the angle whose radian measure is $x$ ), we construct a table of values correct to eight decimal places. From the table below and the graph in Figure 6 we guess that
+
+$$
+\lim _{x \rightarrow 0} \frac{\sin x}{x}=1
+$$
+
+| $x$ | $\frac{\sin x}{x}$ |
+| :---: | :---: |
+| $\pm 1.0$ | 0.84147098 |
+| $\pm 0.5$ | 0.95885108 |
+| $\pm 0.4$ | 0.97354586 |
+| $\pm 0.2$ | 0.99334665 |
+| $\pm 0.1$ | 0.99833417 |
+| $\pm 0.001$ | 0.99958339 |
+|  |  |
+| 0.05 |  |
+
+Figure 6
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-13.jpg?height=358&width=647&top_left_y=2019&top_left_x=739)
+
+- Details
+
+This guess is in fact correct, as will be proved in Chapter 3 using a geometric argument.
+<!-- END OF EXAMPLE -->
+
+<!-- START OF EXAMPLE -->
+## Example 4
+
+Investigate $\lim _{x \rightarrow 0} \sin \frac{\pi}{x}$.
+
+SOLUTION Again the function $f(x)=\sin (\pi / x)$ is undefined at 0 .
+
+Evaluating the function for some small values of $x$, we get
+
+$$
+\begin{array}{cc}
+f(1)=\sin \pi=0 & f\left(\frac{1}{2}\right)=\sin 2 \pi=0 \\
+f\left(\frac{1}{3}\right)=\sin 3 \pi=0 & f\left(\frac{1}{4}\right)=\sin 4 \pi=0 \\
+f(0.1)=\sin 10 \pi=0 & f(0.01)=\sin 100 \pi=0
+\end{array}
+$$
+
+Similarly, $f(0.001)=f(0.0001)=0$. On the basis of this information we might be tempted to guess that
+
+$$
+\lim _{x \rightarrow 0} \sin \frac{\pi}{x}=0
+$$
+
+but this time our guess is wrong. Note that although
+
+$f(1 / n)=\sin n \pi=0$ for any integer $n$, it is also true that $f(x)=1$ for infinitely many values of $x$ (such as $2 / 5$ or $2 / 101$ ) that approach 0 . You can see this from the graph of $f$ shown in Figure 7.
+
+Figure 7
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_36f6093baaca8bea86d6g-15.jpg?height=512&width=1399&top_left_y=210&top_left_x=363)
+
+Details
+
+The dashed lines near the $y$-axis indicate that the values of $\sin (\pi / x)$ oscillate between 1 and -1 infinitely often as $x$ approaches 0 . (See Exercise 51.)
+
+Since the values of $f(x)$ do not approach a fixed number as $x$ approaches 0 ,
+
+$$
+\lim _{x \rightarrow 0} \sin \frac{\pi}{x} \text { does not exist }
+$$
+<!-- END OF EXAMPLE -->
+
+## Computer Algebra Systems
+
+Computer algebra systems (CAS) have commands that compute limits. In order to avoid the types of pitfalls demonstrated in Examples 2, 4, and 5, they don't find limits by numerical experimentation. Instead, they use more sophisticated techniques such as computing infinite series. If you have access to a CAS, use the limit command to compute the limits in the examples of this section and to check your answers in the exercises of this chapter.
+
+<!-- START OF EXAMPLE -->
+## Example 5
+
+Find $\lim _{x \rightarrow 0}\left(x^{3}+\frac{\cos 5 x}{10,000}\right)$.
+
+SOLUTION As before, we construct a table of values. From the first table below it appears that
+
+$$
+\lim _{x \rightarrow 0}\left(x^{3}+\frac{\cos 5 x}{10,000}\right)=0
+$$
+
+But if we persevere with smaller values of $x$, the second table suggests that
+
+$$
+\lim _{x \rightarrow 0}\left(x^{3}+\frac{\cos 5 x}{10,000}\right)=0.000100=\frac{1}{10,000}
+$$
+
+Later we will see that $\lim _{x \rightarrow 0} \cos 5 x=1$; then it follows that the limit is 0.0001 .
+
+| $x$ | $x^{3}+\frac{\cos 5 x}{10,000}$ |
+| :---: | :---: |
+| 1 | 1.000028 |
+| 0.5 | 0.124920 |
+| 0.1 | 0.001088 |
+| 0.01 | 0.000222 |
+
+| $x$ | $x^{3}+\frac{\cos 5 x}{10,000}$ |
+| :---: | :---: |
+| 0.005 | 0.00010009 |
+| 0.001 | 0.00010000 |
+
+Examples 4 and 5 illustrate some of the pitfalls in guessing the value of a limit. It is easy to guess the wrong value if we use inappropriate values of $x$, but it is difficult to know when to stop calculating values. And, as the discussion after Example 2 shows, sometimes calculators and computers give the wrong values. In the next section, however, we will develop foolproof methods for calculating limits.
+<!-- END OF EXAMPLE -->
+<!-- END OF TOPIC -->

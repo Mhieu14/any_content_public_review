@@ -1,0 +1,304 @@
+# Chapter 7: Trigonometric Equations and Identities
+
+In the last two chapters we have used basic definitions and relationships to simplify trigonometric expressions and solve trigonometric equations. In this chapter we will look at more complex relationships. By conducting a deeper study of trigonometric identities we can learn to simplify complicated expressions, allowing us to solve more interesting applications.
+
+Section 7.1 Solving Trigonometric Equations with Identities ..... 453
+
+Section 7.2 Addition and Subtraction Identities ..... 461
+
+Section 7.3 Double Angle Identities ..... 477
+
+Section 7.4 Modeling Changing Amplitude and Midline ..... 488
+
+<!-- START OF TOPIC -->
+## Section 7.1 Solving Trigonometric Equations with Identities
+
+In the last chapter, we solved basic trigonometric equations. In this section, we explore the techniques needed to solve more complicated trig equations. Building from what we already know makes this a much easier task.
+
+Consider the function $f(x)=2 x^{2}+x$. If you were asked to solve $f(x)=0$, it requires simple algebra:
+
+$$
+\begin{array}{ll}
+2 x^{2}+x=0 & \text { Factor } \\
+x(2 x+1)=0 & \text { Giving solutions } \\
+x=0 \text { or } x=-\frac{1}{2} &
+\end{array}
+$$
+
+Similarly, for $g(t)=\sin (t)$, if we asked you to solve $g(t)=0$, you can solve this using unit circle values:
+
+$\sin (t)=0$ for $t=0, \pi, 2 \pi$ and so on.
+
+Using these same concepts, we consider the composition of these two functions:
+
+$f(g(t))=2(\sin (t))^{2}+(\sin (t))=2 \sin ^{2}(t)+\sin (t)$
+
+This creates an equation that is a polynomial trig function. With these types of functions, we use algebraic techniques like factoring and the quadratic formula, along with trigonometric identities and techniques, to solve equations.
+
+As a reminder, here are some of the essential trigonometric identities that we have learned so far:
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_9f24f528dd7d189d72cag-2.jpg?height=702&width=1499&top_left_y=240&top_left_x=253)
+
+<!-- START OF EXAMPLE -->
+## Example 1
+
+Solve $2 \sin ^{2}(t)+\sin (t)=0$ for all solutions with $0 \leq t<2 \pi$.
+
+This equation kind of looks like a quadratic equation, but with $\sin (t)$ in place of an algebraic variable (we often call such an equation "quadratic in sine"). As with all quadratic equations, we can use factoring techniques or the quadratic formula. This expression factors nicely, so we proceed by factoring out the common factor of $\sin (t)$ : $\sin (t)(2 \sin (t)+1)=0$
+
+Using the zero product theorem, we know that the product on the left will equal zero if either factor is zero, allowing us to break this equation into two cases:
+
+$$
+\sin (t)=0 \quad \text { or } \quad 2 \sin (t)+1=0
+$$
+
+We can solve each of these equations independently, using our knowledge of special angles.
+
+$$
+\begin{array}{ll}
+\sin (t)=0 & 2 \sin (t)+1=0 \\
+t=0 \text { or } t=\pi & \sin (t)=-\frac{1}{2} \\
+& t=\frac{7 \pi}{6} \text { or } t=\frac{11 \pi}{6}
+\end{array}
+$$
+
+Together, this gives us four solutions to the equation on $0 \leq t<2 \pi$ :
+
+$$
+t=0, \pi, \frac{7 \pi}{6}, \frac{11 \pi}{6}
+$$
+
+We could check these answers are
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_9f24f528dd7d189d72cag-2.jpg?height=378&width=764&top_left_y=2028&top_left_x=995)
+
+reasonable by graphing the function and comparing the zeros.
+<!-- END OF EXAMPLE -->
+
+<!-- START OF EXAMPLE -->
+## Example 2
+
+Solve $3 \sec ^{2}(t)-5 \sec (t)-2=0$ for all solutions with $0 \leq t<2 \pi$.
+
+Since the left side of this equation is quadratic in secant, we can try to factor it, and hope it factors nicely.
+
+If it is easier to for you to consider factoring without the trig function present, consider using a substitution $u=\sec (t)$, resulting in $3 u^{2}-5 u-2=0$, and then try to factor:
+
+$$
+3 u^{2}-5 u-2=(3 u+1)(u-2)
+$$
+
+Undoing the substitution,
+
+$(3 \sec (t)+1)(\sec (t)-2)=0$
+
+Since we have a product equal to zero, we break it into the two cases and solve each separately.
+
+| $3 \sec (t)+1=0$ | Isolate the secant |
+| :--- | :--- |
+| $\sec (t)=-\frac{1}{3}$ | Rewrite as a cosine |
+| $\frac{1}{\cos (t)}=-\frac{1}{3}$ | Invert both sides |
+| $\cos (t)=-3$ |  |
+
+Since the cosine has a range of $[-1,1]$, the cosine will never take on an output of -3 . There are no solutions to this case.
+
+Continuing with the second case,
+
+$$
+\sec (t)-2=0 \quad \text { Isolate the secant }
+$$
+
+$$
+\begin{array}{ll}
+\sec (t)=2 & \text { Rewrite as a cosine } \\
+\frac{1}{\cos (t)}=2 & \text { Invert both sides }
+\end{array}
+$$
+
+$\cos (t)=\frac{1}{2}$
+
+This gives two solutions $t=\frac{\pi}{3}$ or $t=\frac{5 \pi}{3}$
+
+These are the only two solutions on the interval. By utilizing technology to graph $f(t)=3 \sec ^{2}(t)-5 \sec (t)-2$, a look at a graph confirms there are only two zeros for this function on the interval $[0,2 \pi)$, which assures us that we didn't miss anything.
+<!-- END OF EXAMPLE -->
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_9f24f528dd7d189d72cag-3.jpg?height=387&width=567&top_left_y=2094&top_left_x=1321)
+
+Try it Now
+
+1. Solve $2 \sin ^{2}(t)+3 \sin (t)+1=0$ for all solutions with $0 \leq t<2 \pi$.
+
+When solving some trigonometric equations, it becomes necessary to first rewrite the equation using trigonometric identities. One of the most common is the Pythagorean Identity, $\sin ^{2}(\theta)+\cos ^{2}(\theta)=1$ which allows you to rewrite $\sin ^{2}(\theta)$ in terms of $\cos ^{2}(\theta)$ or vice versa,
+<!-- END OF TOPIC -->
+
+<!-- START OF TOPIC -->
+## Identities
+
+## Alternate Forms of the Pythagorean Identity
+
+$$
+\begin{aligned}
+& \sin ^{2}(\theta)=1-\cos ^{2}(\theta) \\
+& \cos ^{2}(\theta)=1-\sin ^{2}(\theta)
+\end{aligned}
+$$
+
+These identities become very useful whenever an equation involves a combination of sine and cosine functions.
+
+<!-- START OF EXAMPLE -->
+## Example 3
+
+Solve $2 \sin ^{2}(t)-\cos (t)=1$ for all solutions with $0 \leq t<2 \pi$.
+
+Since this equation has a mix of sine and cosine functions, it becomes more complicated to solve. It is usually easier to work with an equation involving only one trig function. This is where we can use the Pythagorean Identity.
+
+$$
+\begin{array}{ll}
+2 \sin ^{2}(t)-\cos (t)=1 & \text { Using } \sin ^{2}(\theta)=1-\cos ^{2}(\theta) \\
+2\left(1-\cos ^{2}(t)\right)-\cos (t)=1 & \text { Distributing the } 2 \\
+2-2 \cos ^{2}(t)-\cos (t)=1 &
+\end{array}
+$$
+
+Since this is now quadratic in cosine, we rearrange the equation so one side is zero and factor.
+
+$-2 \cos ^{2}(t)-\cos (t)+1=0 \quad$ Multiply by -1 to simplify the factoring
+
+$2 \cos ^{2}(t)+\cos (t)-1=0 \quad$ Factor
+
+$(2 \cos (t)-1)(\cos (t)+1)=0$
+
+This product will be zero if either factor is zero, so we can break this into two separate cases and solve each independently.
+
+$$
+\begin{array}{lll}
+2 \cos (t)-1=0 & \text { or } & \cos (t)+1=0 \\
+\cos (t)=\frac{1}{2} & \text { or } & \cos (t)=-1 \\
+t=\frac{\pi}{3} \text { or } t=\frac{5 \pi}{3} & \text { or } & t=\pi
+\end{array}
+$$
+
+Try it Now
+<!-- END OF EXAMPLE -->
+
+2. Solve $2 \sin ^{2}(t)=3 \cos (t)$ for all solutions with $0 \leq t<2 \pi$.
+
+In addition to the Pythagorean Identity, it is often necessary to rewrite the tangent, secant, cosecant, and cotangent as part of solving an equation.
+
+<!-- START OF EXAMPLE -->
+## Example 4
+
+Solve $\tan (x)=3 \sin (x)$ for all solutions with $0 \leq x<2 \pi$.
+
+With a combination of tangent and sine, we might try rewriting tangent $\tan (x)=3 \sin (x)$
+
+$$
+\begin{array}{ll}
+\frac{\sin (x)}{\cos (x)}=3 \sin (x) & \text { Multiplying both sides by cosine } \\
+\sin (x)=3 \sin (x) \cos (x) &
+\end{array}
+$$
+
+At this point, you may be tempted to divide both sides of the equation by $\sin (x)$. Resist the urge. When we divide both sides of an equation by a quantity, we are assuming the quantity is never zero. In this case, when $\sin (x)=0$ the equation is satisfied, so we'd lose those solutions if we divided by the sine.
+
+To avoid this problem, we can rearrange the equation so that one side is zero ${ }^{1}$. $\sin (x)-3 \sin (x) \cos (x)=0 \quad$ Factoring out $\sin (x)$ from both parts $\sin (x)(1-3 \cos (x))=0$
+
+From here, we can see we get solutions when $\sin (x)=0$ or $1-3 \cos (x)=0$.
+
+Using our knowledge of the special angles of the unit circle, $\sin (x)=0$ when $x=0$ or $x=\pi$.[^0]
+
+For the second equation, we will need the inverse cosine.
+
+$1-3 \cos (x)=0$
+
+$\cos (x)=\frac{1}{3}$
+
+Using our calculator or technology
+
+$x=\cos ^{-1}\left(\frac{1}{3}\right) \approx 1.231 \quad$ Using symmetry to find a second solution
+
+$x=2 \pi-1.231=5.052$
+
+We have four solutions on $0 \leq x<2 \pi$ :
+
+$x=0,1.231, \pi, 5.052$
+<!-- END OF EXAMPLE -->
+
+Try it Now
+
+3. Solve $\sec (\theta)=2 \cos (\theta)$ to find the first four positive solutions.
+
+<!-- START OF EXAMPLE -->
+## Example 5
+
+Solve $\frac{4}{\sec ^{2}(\theta)}+3 \cos (\theta)=2 \cot (\theta) \tan (\theta)$ for all solutions with $0 \leq \theta<2 \pi$.
+
+$\frac{4}{\sec ^{2}(\theta)}+3 \cos (\theta)=2 \cot (\theta) \tan (\theta) \quad$ Using the reciprocal identities
+
+$4 \cos ^{2}(\theta)+3 \cos (\theta)=2 \frac{1}{\tan (\theta)} \tan (\theta) \quad$ Simplifying
+
+$4 \cos ^{2}(\theta)+3 \cos (\theta)=2 \quad$ Subtracting 2 from each side
+
+$4 \cos ^{2}(\theta)+3 \cos (\theta)-2=0$
+
+This does not appear to factor nicely so we use the quadratic formula, remembering that we are solving for $\cos (\theta)$.
+
+$\cos (\theta)=\frac{-3 \pm \sqrt{3^{2}-4(4)(-2)}}{2(4)}=\frac{-3 \pm \sqrt{41}}{8}$
+
+Using the negative square root first,
+
+$\cos (\theta)=\frac{-3-\sqrt{41}}{8}=-1.175$
+
+This has no solutions, since the cosine can't be less than -1 .
+
+Using the positive square root,
+
+$\cos (\theta)=\frac{-3+\sqrt{41}}{8}=0.425$
+
+$\theta=\cos ^{-1}(0.425)=1.131 \quad$ By symmetry, a second solution can be found
+
+$\theta=2 \pi-1.131=5.152$
+<!-- END OF EXAMPLE -->
+
+## Important Topics of This Section
+
+Review of Trig Identities
+
+Solving Trig Equations
+
+By Factoring
+
+Using the Quadratic Formula
+
+Utilizing Trig Identities to simplify
+
+Try it Now Answers
+
+1. Factor as $(2 \sin (t)+1)(\sin (t)+1)=0$
+
+$2 \sin (t)+1=0$ at $t=\frac{7 \pi}{6}, \frac{11 \pi}{6}$
+
+$\sin (t)+1=0$ at $t=\frac{3 \pi}{2}$
+
+$t=\frac{7 \pi}{6}, \frac{3 \pi}{2}, \frac{11 \pi}{6}$
+
+2. $2\left(1-\cos ^{2}(t)\right)=3 \cos (t)$
+
+$2 \cos ^{2}(t)+3 \cos (t)-2=0$
+
+$(2 \cos (t)-1)(\cos (t)+2)=0$
+
+$\cos (t)+2=0$ has no solutions
+
+$2 \cos (t)-1=0$ at $t=\frac{\pi}{3}, \frac{5 \pi}{3}$
+
+3. $\frac{1}{\cos (\theta)}=2 \cos (\theta)$
+
+$\frac{1}{2}=\cos ^{2}(\theta)$
+
+$\cos (\theta)= \pm \sqrt{\frac{1}{2}}= \pm \frac{\sqrt{2}}{2}$
+
+$\theta=\frac{\pi}{4}, \frac{3 \pi}{4}, \frac{5 \pi}{4}, \frac{7 \pi}{4}$
+
+[^0]:    ${ }^{1}$ You technically can divide by $\sin (x)$, as long as you separately consider the case where $\sin (x)=0$. Since it is easy to forget this step, the factoring approach used in the example is recommended.
+<!-- END OF TOPIC -->

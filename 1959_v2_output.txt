@@ -1,0 +1,575 @@
+22. Are We Getting Taller? Example 1 used heights of small samples of males from Data Set 2 "ANSUR I 1988" and from Data Set 3 "ANSUR II 2012." Repeat Example 1 using the 1774 heights of males from the ANSUR I 1988 data set and the 4082 heights of males from the ANSUR II 2012 data set. Do the larger samples provide sufficient evidence to suggest that people are getting taller?
+
+23. Do Men Talk Less Than Women? Refer to Data Set 14 "Word Counts" and use the measured word counts from men in the third column ("M2") and the measured word counts from women in the fourth column ("F2"). Use a 0.05 significance level to test the claim that men talk less than women.
+
+24. Queues Repeat Exercise 18 using all of the waiting times from the two line configuration and the single line configuration in Data Set 30 "Queues" in Appendix B.
+
+<!-- START OF TOPIC -->
+# 9-2 Beyond the Basics
+
+25. Pooling Repeat Exercise 14 "IQ and Lead Exposure" by assuming that the two population standard deviations are equal, so $\sigma_{1}=\sigma_{2}$. Use the appropriate method from Part 2 of this section. Does pooling the standard deviations yield results showing greater significance?
+
+26. Degrees of Freedom In Exercise 20 "Blanking Out on Tests," using the "smaller of $n_{1}-1$ and $n_{2}-1$ " for the number of degrees of freedom results in $\mathrm{df}=15$. Find the number of degrees of freedom using Formula 9-1. In general, how are hypothesis tests and confidence intervals affected by using Formula 9-1 instead of the "smaller of $n_{1}-1$ and $n_{2}-1$ "?
+
+27. No Variation in a Sample An experiment was conducted to test the effects of alcohol. Researchers measured the breath alcohol levels for a treatment group of people who drank ethanol and another group given a placebo. The results are given below (based on data from "Effects of Alcohol Intoxication on Risk Taking, Strategy, and Error Rate in Visuomotor Performance," by Streufert et al., Journal of Applied Psychology, Vol. 77, No. 4). Use a 0.05 significance level to test the claim that the two sample groups come from populations with the same mean.
+
+$$
+\begin{aligned}
+\text { Treatment Group: } & n_{1}=22, \bar{x}_{1}=0.049, s_{1}=0.015 \\
+\text { Placebo Group: } & n_{2}=22, \bar{x}_{2}=0.000, s_{2}=0.000
+\end{aligned}
+$$
+<!-- END OF TOPIC -->
+
+<!-- START OF TOPIC -->
+## 9-3 Matched Pairs
+
+Key Concept This section presents methods for testing hypotheses and constructing confidence intervals involving the mean of the differences of the values from two populations that consist of matched pairs. The pairs must be matched according to some relationship, such as these:
+
+- Before/after measurements from the same subjects
+
+- IQ scores of husbands and wives
+
+- Measured and reported weights from a sample of subjects
+
+## Good Experimental Design
+
+Many experiments have been conducted to test the effectiveness of drug treatments in lowering blood pressure. When designing such experiments to test the effectiveness of a treatment, there are different approaches that could be taken, such as these:
+
+1. Measure the blood pressure of each subject before and after the treatment, then analyze the "before - after" differences.
+
+2. For the entire sample of subjects, find the mean blood pressure before the treatment and then find the mean after the treatment.
+
+3. Obtain a random sample of subjects and use randomness to separate them into one sample given the treatment and another sample given a placebo.
+
+An advantage of using the matched pairs from the first approach is that we reduce the extraneous variation, which could easily occur with different independent samples. The strategy for designing an experiment can be generalized by the following principle of good design:
+
+## When designing an experiment or planning an observational study, using matched pairs is generally better than using two independent samples.
+
+Déjà Vu All Over Again The methods of hypothesis testing in this section are the same methods for testing a claim about a population mean (Section 8-3), except that here we use the differences from the matched pairs of sample data.
+
+There are no exact procedures for dealing with matched pairs, but the following approximation methods are commonly used.
+
+## KEY ELEMENTS
+
+Inferences About Differences from Matched Pairs
+
+## Objectives
+
+1. Hypothesis Test: Use the differences from matched pairs to test a claim about the mean of the population of all such differences.
+
+2. Confidence Interval: Use the differences from matched pairs to construct a confidence interval estimate of the mean of the population of all such differences.
+
+## Notation for Matched Pairs
+
+$d=$ individual difference between the two values in a single matched pair
+
+$\mu_{d}=$ mean value of the differences $d$ for the population of all matched pairs of data
+
+$\bar{d}=$ mean value of the differences $d$ for the paired sample data
+
+$s_{d}=$ standard deviation of the differences $d$ for the paired sample data
+
+$n=$ number of pairs of sample data
+
+## Requirements
+
+1. The sample data are matched pairs.
+
+2. The matched pairs are a simple random sample.
+
+3. Either or both of these conditions are satisfied: The number of pairs of sample data is large $(n>30)$ or the pairs of values have differences that are from a population having a distribution that is approximately normal.
+
+These methods are robust against departures for normality, so the normality requirement is loose
+
+(If the third requirement is not satisfied, alternatives include the resampling methods of bootstrapping and randomization as described in Section 9-5, or the Sign test as described in Section 13-2.)
+
+Test Statistic for Matched Pairs (with $H_{0}: \mu_{d}=0$ )
+
+$$
+t=\frac{\bar{d}-\mu_{d}}{\frac{s_{d}}{\sqrt{n}}}
+$$
+
+$\boldsymbol{P}$-Values: $\quad P$-values are automatically provided by technology or the $t$ distribution in Table A-3 can be used. Use the procedure given in Figure 8-3 on page 380.
+
+Critical Values: Use Table A-3 ( $t$ distribution). For degrees of freedom, use df $=n-1$.
+
+## Confidence Intervals for Matched Pairs
+
+$$
+\begin{gathered}
+\bar{d}-E<\mu_{d}<\bar{d}+E \\
+\text { where } E=t_{\alpha / 2} \frac{s_{d}}{\sqrt{n}}(\text { Degrees of freedom: } \mathrm{df}=n-1 .)
+\end{gathered}
+$$
+
+## Procedures for Inferences with Matched Pairs
+
+1. Verify that the sample data consist of matched pairs, and verify that the requirements in the preceding Key Elements box are satisfied.
+
+2. Find the difference $d$ for each pair of sample values. (Caution: Be sure to subtract in a consistent manner, such as "before - after").
+
+3. Find the value of $\bar{d}$ (mean of the differences) and $s_{d}$ (standard deviation of the differences).
+
+4. For hypothesis tests and confidence intervals, use the same $t$ test procedures used for a single population mean (described in Section 8-3).
+
+## Equivalent Methods
+
+Because the hypothesis test and confidence interval in this section use the same distribution and standard error, they are equivalent in the sense that they result in the same conclusions. Consequently, a null hypothesis that the mean difference equals 0 can be tested by determining whether the confidence interval includes 0 .
+
+<!-- START OF EXAMPLE -->
+## EXAMPLE 1 Are People Honest About their Weight?
+
+It is a common belief that if you ask someone how much they weigh, you tend to get a number that is somewhat lower than the number that you would get by using a scale to actually weigh them. Listed below are measured and reported weights ( lb ) of random male subjects (from Data Set 4 "Measured and Reported" in Appendix B). Use a 0.05 significance level to test the claim that for males, the measured weights tend to be higher than the reported weights.
+
+TABLE 9-2 Measured and Reported Weights (lb)
+
+| Subject | $\mathbf{1}$ | $\mathbf{4}$ | $\mathbf{4}$ | $\mathbf{4}$ | $\mathbf{5}$ | $\mathbf{6}$ | $\mathbf{7}$ | $\mathbf{8}$ |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Measured Weight (Ib) | 152.6 | 149.3 | 174.8 | 119.5 | 194.9 | 180.3 | 215.4 | 239.6 |
+| Reported Weight (lb) | 150 | 148 | 170 | 119 | 185 | 180 | 224 | 239 |
+
+## SOLUTION
+
+Requirement Check We address the three requirements listed earlier in the Key Elements box. (1) The data are matched pairs because each pair of values is from the same subject. (2) The pairs of data are randomly selected. We will consider the data to be a simple random sample. (3) Because the number of pairs of data is $n=8$, which is not large, we should check for normality of the differences and we should check for outliers. There are no outliers, and a normal quantile plot shows that the points approximate a straight-line pattern with no other pattern, so the differences satisfy the loose requirement of being from a normally distributed population. All requirements are satisfied. (6)
+
+## Matched Pairs
+
+## In the late
+ 1950s, Procter
+
+\& Gamble introduced Crest toothpaste as the first such product with fluoride. To test the effectiveness of Crest in reducing cavities, researchers conducted experiments with several sets of twins. One of the twins in each set was given Crest with fluoride, while the other twin continued to use ordinary toothpaste without fluoride. It was believed that each pair of twins would have similar eating, brushing, and genetic characteristics. Results showed that the twins who used Crest had significantly fewer cavities than those who did not. This use of twins as matched pairs samples allowed the researchers to control many of the different variables affecting cavities
+
+## Twins in Twinsburg
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_654e2baaaf7c9afdb03eg-04.jpg?height=288&width=275&top_left_y=325&top_left_x=58)
+
+During the first weekend in August of each year, Twinsburg, Ohio, celebrates its annual "Twins Days in Twinsburg" festival. Thousands of twins from around the world have attended this festival in the past. Scientists saw the festival as an opportunity to study identical twins. Because they have the same basic genetic structure, identical twins are ideal for studying the different effects of heredity and environment on a variety of traits, such as male baldness, heart disease, and deafnesstraits that were recently studied at one Twinsburg festival. A study of twins showed that myopia (near-sightedness) is strongly affected by hereditary factors, not by environmental factors such as watching television, surfing the Internet, or playing computer or video games.
+
+We will follow the same method of hypothesis testing that we used for testing a claim about a mean (see Figure 8-1 on page 376), but we use differences instead of the original raw sample data.
+
+Step 1: The claim that the measured weights tend to be higher than the reported weights can be expressed as $\mu_{d}>0 \mathrm{lb}$.
+
+Step 2: If the original claim is not true, we have $\mu_{d} \leq 0 \mathrm{lb}$.
+
+Step 3: The null hypothesis must express equality and the alternative hypothesis cannot include equality, so we have
+
+$$
+H_{0}: \mu_{d}=0 \mathrm{lb} \quad H_{1}: \mu_{d}>0 \mathrm{lb} \text { (original claim) }
+$$
+
+Step 4: The significance level is $\alpha=0.05$.
+
+Step 5: Using Technology Steps 5 and 6 can be done with technology. Shown here is the Excel (XLSTAT) display for this hypothesis test, and it shows the test statistic is $t=0.778$ ("observed value") and the $P$-value is 0.231 .
+
+Excel (XLSTAT)
+
+| Difference | 1.425 |
+| :--- | ---: |
+| t (Observed value) | 0.778 |
+| t (Critical value) | 1.895 |
+| DF | 7 |
+| p-value (one-tailed) | 0.231 |
+| alpha | 0.05 |
+
+Manual Calculation If not using technology, we use the Student $t$ distribution with the differences.
+
+Step 6: Manual Calculations From Table 9-2 we get these "measured reported" differences: $2.6,1.3,4.8,0.5,9.9,0.3,-8.6,0.6$. We use this list of differences to find these unrounded sample statistics: $n=8, \bar{d}=1.425 \mathrm{lb}$, $s_{d}=5.181216 \mathrm{lb}$. Using these sample statistics and the assumption from the null hypothesis that $\mu_{d}=0 \mathrm{lb}$, we can now find the value of the test statistic as shown below.
+
+$$
+t=\frac{\bar{d}-\mu_{d}}{\frac{s_{d}}{\sqrt{n}}}=\frac{1.425-0}{\frac{5.181216}{\sqrt{8}}}=0.778
+$$
+
+$\boldsymbol{P}$-Value Method Because we are using a $t$ distribution, we refer to Table A-3 for the row with $\mathrm{df}=7$ and we see that the test statistic $t=0.778$ corresponds to an "Area in One Tail" that is greater than 0.10 , so $P$-value $>0.10$. (The preceding XLSTAT display shows that $P$-value $=0.231$.)
+
+Critical Value Method Refer to Table A-3 to find the critical value of $t=1.895$ as follows: Use the column for 0.05 (Area in One Tail), and use the row with degrees of freedom of $n-1=7$. We get the critical value of $t=1.895$. See Figure 9-3(b).
+
+Step 7: If we use the $P$-value method, we fail to reject $H_{0}$ because the $P$-value of 0.231 is greater than the significance level of 0.05 . If we use the critical value method, we fail to reject $H_{0}$ because the test statistic of $t=0.778$ does not fall in the critical region.
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_654e2baaaf7c9afdb03eg-05.jpg?height=559&width=660&top_left_y=192&top_left_x=250)
+
+(a) $P$-Value Method
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_654e2baaaf7c9afdb03eg-05.jpg?height=562&width=682&top_left_y=191&top_left_x=922)
+
+(b) Critical Value Method
+
+## FIGURE 9-3 Hypothesis Test with Matched Pairs
+
+## INTERPRETATION
+
+We conclude that there is not sufficient evidence to support $\mu_{d}>0 \mathrm{lb}$. There is not sufficient evidence to support the claim that for males, the measured weights tend to be higher than the reported weights. Based on the very small sample, it appears that males do not tend to report weights that are much lower than their actual weights. It is possible that a much larger sample would lead to a different conclusion.
+<!-- END OF EXAMPLE -->
+
+YOUR TURN. Do Part (a) of Exercise 5 "Measured and Reported Weights."
+
+<!-- START OF EXAMPLE -->
+## EXAMPLE 2 Confidence Interval for Estimating the Mean of the Differences Between Measured Weights and Reported Weights of Males
+
+Using the same sample data in Table 9-2, construct a $90 \%$ confidence interval estimate of $\mu_{d}$, which is the mean of the differences between measured weights and reported weights of males. By using a confidence level of $90 \%$, we get a result that could be used for the hypothesis test in Example 1. (Because the hypothesis test is one-tailed with a significance level of $\alpha=0.05$, the confidence level should be $90 \%$. See Table $8-1$ on page 376 .)
+
+## SOLUTION
+
+REQUIREMENT CHECK The solution for Example 1 includes verification that the requirements are satisfied. (C)
+
+Some technologies such as Statdisk, Minitab, XLSTAT, and the TI-83/84 Plus calculator will provide the confidence interval when asked politely.
+
+To manually find the confidence interval, use these sample statistics found in Example $1: n=8, \bar{d}=1.425 \mathrm{lb}, s_{d}=5.181216 \mathrm{lb}$ and use the critical value of $t=1.895$ (also found in Example 1). We first calculate the value of the margin of error $E$.
+
+$$
+E=t_{\alpha / 2} \frac{s_{d}}{\sqrt{n}}=1.895 \cdot \frac{5.181216}{\sqrt{8}}=3.4713301
+$$
+
+We now find the confidence interval.
+
+$$
+\begin{aligned}
+\bar{d}-E & <\mu_{d}<\bar{d}+E \\
+1.425-3.4713301 & <\mu_{d}<1.425+3.4713301 \\
+-2.05 \mathrm{lb} & <\mu_{d}<4.90 \mathrm{lb}
+\end{aligned}
+$$
+
+## Gender Gap in Drug Testing
+
+## A study of
+ the relationship between heart attacks and doses of aspirin involved 22,000 male
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_654e2baaaf7c9afdb03eg-05.jpg?height=272&width=280&top_left_y=1520&top_left_x=1768)
+
+physicians. This study, like many others, excluded women The General Accounting Office criticized the National Institutes of Health for not including both genders in many studies because results of medical tests on males do not necessarily apply to females. For example, women's hearts are different from men's in many important ways. When forming conclusions based on sample results, we should be wary of an inference that extends to a population larger than the one from which the sample was drawn.
+
+## INTERPRETATION
+
+We have $90 \%$ confidence that the limits of -2.05 lb and 4.90 lb contain the true value of the mean of the "measured - reported" differences. In the long run, $90 \%$ of such samples will lead to confidence interval limits that actually do contain the true population mean of those differences. See that the confidence interval includes the value of 0 lb , so it is very possible that the mean of the differences is equal to 0 lb , indicating that there is no significant difference between measured weights and reported weights. Remember, this conclusion is based on the very small sample included in Table 9-2.
+
+YOUR TURN. Do Part (b) of Exercise 5 "Measured and Reported Weights."
+<!-- END OF EXAMPLE -->
+<!-- END OF TOPIC -->
+
+Alternative Methods: Resampling Methods of Bootstrapping and Randomization The claim that the measured weights of males tend to be higher than the reported weights can be tested by using the resampling methods of bootstrapping and randomization. See Section 9-5 "Resampling: Using Technology for Inferences."
+
+## TECH CENTER
+
+Inferences with Two Means: Matched Pairs
+
+Access tech supplements, videos, and data sets at www.TriolaStats.com
+
+## Statdisk
+
+Requires paired sample data entered in columns.
+
+Hypothesis Testing
+
+1. Click Analysis in the top menu.
+
+2. Select Hypothesis Testing from the dropdown menu and Mean Matched Pairs from the submenu.
+
+3. Select the desired format for Alternative Hypothesis, enter the significance level, and select the data columns to compare.
+
+4. Click Evaluate.
+
+## Confidence Intervals
+
+1. Click Analysis in the top menu.
+
+2. Select Confidence Intervals from the dropdown menu and Mean Matched Pairs from the submenu.
+
+3. Enter the desired confidence level and select the data columns to compare.
+
+4. Click Evaluate.
+
+Minitab
+
+Requires paired sample data entered in columns.
+
+1. Click Stat in the top menu.
+
+2. Select Basic Statistics from the dropdown menu and select Paired $\mathbf{t}$ from the submenu.
+
+3. Select Each sample is in a column from the dropdown menu and select the desired data columns.
+
+4. Click the Options button and enter the confidence level. Enter $\mathbf{0}$ for the Hypothesized difference and select the desired format for the Alternative hypothesis.
+
+5. Click OK twice.
+
+## StatCrunch
+
+Requires paired sample data entered in columns.
+
+1. Click Stat in the top menu.
+
+2. Select T Stats from the dropdown menu, then select Paired from the submenu.
+
+3. Select the columns containing paired sample data.
+
+4. Hypothesis Testing: Select Hypothesis test for $\boldsymbol{\mu}_{\mathrm{D}}=\boldsymbol{\mu}_{\mathbf{1}}-\boldsymbol{\mu}_{\mathbf{2}}$. For hypothesized difference $\left(\mathrm{H}_{0}\right)$ enter $\boldsymbol{0}$ and select the desired format for the alternative hypothesis $\left(\mathrm{H}_{\mathrm{A}}\right)$.
+
+Confidence Intervals: Select Confidence interval for $\boldsymbol{\mu}_{\mathrm{D}}=\boldsymbol{\mu}_{\boldsymbol{1}}-\boldsymbol{\mu}_{2}$ and enter the confidence level.
+
+## 5. Click Compute!
+
+## TECH CENTER continued
+
+Inferences with Two Means: Matched Pairs
+
+Access tech supplements, videos, and data sets at www.TriolaStats.com
+
+## TI-83/84 Plus Calculator
+
+Caution: Do not use the menu item 2-SampTTest because it applies only to independent samples.
+
+1. Enter the data for the first variable in list $L 1$ and the data for the second variable in list $L 2$.
+
+2. Create a list of differences and store the list in L3 by entering L1 - L2 Stoy L3 ENTER.
+
+3. Press STAT, then select TESTS in the top menu.
+
+## Hypothesis Testing
+
+1. Choose T-Test and press enter
+
+2. Select Data and press Enter
+
+3. For $\mu_{0}$ enter $\mathbf{0}$.
+
+4. For List enter L3 (leave Freq = 1).
+
+5. For $\mu$ select the desired format for the alternative hypothesis.
+
+6. Select Calculate and press ENTER.
+
+## Confidence Interval
+
+1. Choose TInterval and press ENTER.
+
+2. Select Data, press ENTER, and enter L3 for list name (leave Freq = 1).
+
+3. Enter the desired confidence level C-Level.
+
+4. Select Calculate and press ENTER.
+
+TIP: The list name $L 1$ (and $L 2 \ldots L 6$ ) can be quickly entered by pressing 2ND (1)
+
+## Excel
+
+Requires paired sample data entered in columns.
+
+## Hypothesis Test
+
+## XLSTAT Add-In
+
+1. Click on the XLSTAT tab in the Ribbon and then click Parametric tests.
+
+2. Select Two-sample t-test and z-test from the dropdown menu.
+
+3. For Data format select Paired samples. Under Sample $1 \& 2$, enter the range of cells containing the paired sample data.
+
+4. Select Student's $t$ test.
+
+5. If the first row of data contains a label, check the Column labels box.
+
+6. Click the Options tab.
+
+7. Under Alternative hypothesis select the desired format ( $\neq$ for two-tailed test, $<$ for left-tailed test, $>$ for right-tailed test). Enter $\mathbf{0}$ for Hypothesized difference ( $D$ ) and enter the desired significance level (enter 5 for 0.05 significance level). Select Asymptotic p-value.
+
+8. Click OK to display the test statistic (labeled $t$ Observed value) and $P$-value.
+
+Excel (Data Analysis Add-In)
+
+1. Click on Data in the ribbon, then click on the Data Analysis tab.
+
+2. Select t-Test: Paired Two Sample for Means and click OK.
+
+3. Enter the data range for each variable in the Variable Range boxes. If the first row contains a label, check the Labels box.
+
+4. Enter $\mathbf{0}$ for Hypothesized Mean Difference.
+
+5. Enter the desired significance level in the Alpha box.
+
+6. Click OK. The results include the test statistic (labeled $t$ Stat), $P$-values for a one-tail and two-tail test, and critical values for one-tail and two-tail test.
+
+## Confidence Interval
+
+XLSTAT Add-In (Required)
+
+1-5. Follow above Steps 1-5 for Hypothesis Test using the XLSTAT Add-In.
+
+6. Click the Options tab.
+
+7. Under Alternative hypothesis select the two-tailed option $\neq$. Enter $\mathbf{0}$ for Hypothesized difference ( $D$ ) and enter the desired significance level (enter 5 for $95 \%$ confidence level). Select Asymptotic $\boldsymbol{p}$-value.
+
+8. Click OK to display the confidence interval.
+
+## TECH CENTER continued
+
+Inferences with Two Means: Matched Pairs
+
+Access tech supplements, videos, and data sets at www.TriolaStats.com
+
+$R$ command: $t . t e s t(x, y$, alternative $=c$ ("two.sided", "less", "greater"), paired = TRUE, conf.level = 0.95)
+
+where $x$ and $y$ are each vectors of matched pairs of sample data.
+
+TIP: For Example 1: $\mathbf{t . t e s t}(\mathbf{x}, \mathbf{y}$, alternative $=$ "greater", paired $=$ TRUE, conf.level $=\mathbf{0 . 9 5}$ )
+
+A complete list of $R$ statistical commands is available at TriolaStats.com
+
+## 9-3 Basic Skills and Concepts
+
+## Statistical Literacy and Critical Thinking
+
+1. Is Friday the 13th Unlucky? Listed below are numbers of hospital admissions in one region due to traffic accidents on different Fridays falling on the 6th day of a month and the following 13th day of the month (based on data from "Is Friday the 13th Bad for Your Health," by Scanlon et al., British Medical Journal, Vol. 307). Assume that we want to use a 0.05 significance level to test the claim that the data support the claim that fewer hospital admissions due to traffic accidents occur on Friday the 6th than on the following Friday the 13th. Identify the null hypothesis and alternative hypothesis.
+
+| Friday 6th | 9 | 6 | 11 | 11 | 3 | 5 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Friday 13th | 13 | 12 | 14 | 10 | 4 | 12 |
+
+2. Friday the 13th Refer to the sample data from Exercise 1.
+
+a. Find the differences $d$, then find the values of $\bar{d}$ and $s_{d}$.
+
+b. In general, what does $\mu_{d}$ represent?
+
+3. Confidence Interval Assume that we want to use the sample data in Exercise 1 for constructing a confidence interval to be used for testing the given claim.
+
+a. What is the confidence level that should be used for the confidence interval?
+
+b. What is the critical $t$ value that should be used for finding the margin of error $E$ ?
+
+c. If the resulting confidence interval is -5.8 admissions $<\mu_{d}<-0.9$ admissions, what do you conclude?
+
+4. True or False For the methods of this section, determine whether the following statements are true or false.
+
+a. When testing a claim with matched pairs of data, hypothesis tests using the $P$-value method, critical value method, and confidence interval method will all result in the same conclusion.
+
+b. If a simple random sample of 50 matched pairs of data yields differences with a distribution that is far from normal, then the methods of this section should not be used.
+
+c. The methods of this section can be used with pulse rates of 100 randomly selected adult women and 100 randomly selected adult men.
+
+d. If using the methods of this section to test a claim that $\mu_{d} \neq 0$ and it is found that the $95 \%$ confidence interval does not include 0 , then the $P$-value must be 0.05 or less.
+
+e. If the methods of this section are used with pulse rates of 100 subjects before and after exercise, the sample size is $n=200$.
+
+In Exercises 5-16, use the listed paired sample data, and assume that the samples are simple random samples and that the differences have a distribution that is approximately normal.
+
+5. Measured and Reported Weights Listed below are measured and reported weights (lb) of random female subjects (from Data Set 4 "Measured and Reported" in Appendix B).
+
+a. Use a 0.05 significance level to test the claim that for females, the measured weights tend to be higher than the reported weights.
+
+b. Construct the confidence interval that could be used for the hypothesis test described in part (a). What feature of the confidence interval leads to the same conclusion reached in part (a)?
+
+| Measured | 147.3 | 268.7 | 213.4 | 201.3 | 107.1 | 172.0 | 187.4 | 132.5 | 122.1 | 151.9 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Reported | 142 | 267 | 210 | 204 | 107 | 176 | 187 | 135 | 122 | 150 |
+
+6. Do Men Talk Less than Women? Listed below are word counts of males and females in couple relationships (from Data Set 14 "Word Counts" in Appendix B).
+
+a. Use a 0.05 significance level to test the claim that men talk less than women.
+
+b. Construct the confidence interval that could be used for the hypothesis test described in part (a). What feature of the confidence interval leads to the same conclusion reached in part (a)?
+
+| Men | 13,560 | 18,876 | 13,825 | 9274 | 20,547 | 17,190 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Women | 21,261 | 12,964 | 33,789 | 8709 | 10,508 | 11,909 |
+
+7. The Freshman 15 The "Freshman 15 " refers to the belief that college students gain 15 lb (or 6.8 kg ) during their freshman year. Listed below are weights ( kg ) of randomly selected male college freshmen (from Data Set 13 "Freshman 15" in Appendix B). The weights were measured in September and later in April.
+
+a. Use a 0.01 significance level to test the claim that for the population of freshman male college students, the weights in September are less than the weights in the following April.
+
+b. Construct the confidence interval that could be used for the hypothesis test described in part (a). What feature of the confidence interval leads to the same conclusion reached in part (a)?
+
+c. What do you conclude about the Freshman 15 belief?
+
+| September | 67 | 68 | 87 | 81 | 60 | 70 | 68 | 68 | 80 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| April | 67 | 68 | 88 | 82 | 61 | 71 | 69 | 69 | 82 |
+
+8. QWERTY vs Dvorak Currently, keyboards have the keys configured in an arrangement referred to as "QWERTY" because of the placement of those particular letters on the second row from the top. Supposedly, that configuration was designed to slightly slow typing so that keys would not jam in typewriters commonly used in days of yore. The Dvorak keyboard configuration is claimed to be more efficient by arranging keys according to frequency of use. Listed below are difficulty ratings of typing different words on each of the two keyboards (based on data collected by the author). The data are paired according to the same word used on both keyboards, and higher numbers correspond to words that are more difficult to type.
+
+a. Use a 0.01 significance level to test the claim that word difficulty scores are higher with the QWERTY keyboard.
+
+b. Construct the confidence interval that could be used for the hypothesis test described in part (a). What feature of the confidence interval leads to the same conclusion reached in part (a)?
+
+| QWERTY | 5 | 6 | 6 | 8 | 10 | 7 | 2 | 2 | 10 | 5 | 8 | 2 | 5 | 4 | 2 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Dvorak | 3 | 3 | 1 | 3 | 5 | 4 | 2 | 0 | 5 | 1 | 4 | 0 | 3 | 5 | 0 |
+
+9. Audiometry Listed below are results from subjects tested for hearing in the right ear and left ear (based on data from the National Center for Health Statistics). Values are in decibels Hearing Level ( db HL ) which represent the quietest sound level subjects can hear at a specific frequency.
+
+a. Use a 0.05 significance level to test the claim that the population of such differences has a mean equal to 0 .
+
+b. Construct the confidence interval that could be used for the hypothesis test described in part (a). What feature of the confidence interval leads to the same conclusion reached in part (a)?
+
+| Right Ear | 5 | 10 | 5 | 5 | 40 | 10 | 45 | 15 | 30 | 5 | 20 | 5 |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Left Ear | 5 | 10 | 15 | 5 | 25 | 5 | 35 | 10 | 15 | 10 | 25 | 10 |
+
+10. Vision Test Listed below are results from subjects tested for visual acuity in the right eye and left eye (based on data from the National Center for Health Statistics). Lower values represent better vision.
+
+a. Use a 0.05 significance level to test the claim that the population of such differences has a mean equal to 0 .
+
+b. Construct the confidence interval that could be used for the hypothesis test described in part (a). What feature of the confidence interval leads to the same conclusion reached in part (a)?
+
+| Right Eye | 30 | 25 | 20 | 20 | 25 | 50 | 20 | 20 | 25 | 25 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Left Eye | 20 | 25 | 25 | 20 | 25 | 40 | 20 | 20 | 20 | 30 |
+
+11. Oscars Listed below are ages of actresses and actors when they won Academy Awards for their performances (from Data Set 21 "Oscar Winner Age" in Appendix B). Each pair of ages is from the same year.
+
+a. Use a 0.05 significance level to test the claim that Oscar-winning actresses tend to be younger than Oscar-winning actors.
+
+b. Construct the confidence interval that could be used for the hypothesis test described in part (a). What feature of the confidence interval leads to the same conclusion reached in part (a)?
+
+| Actress (years) | 28 | 28 | 31 | 29 | 35 | 26 | 26 | 41 | 30 | 34 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Actor (years) | 62 | 37 | 36 | 38 | 29 | 34 | 51 | 39 | 37 | 42 |
+
+12. Heights of Presidents A popular theory is that presidential candidates have an advantage if they are taller than their main opponents. Listed are heights $(\mathrm{cm})$ of presidents along with the heights of their main opponents (from Data Set 22 "Presidents" in Appendix B).
+
+a. Use the sample data with a 0.05 significance level to test the claim that for the population of heights of presidents and their main opponents, the differences have a mean greater than 0 cm .
+
+b. Construct the confidence interval that could be used for the hypothesis test described in part (a). What feature of the confidence interval leads to the same conclusion reached in part (a)?
+
+| Height $(\mathrm{cm})$ of President | 185 | 178 | 175 | 183 | 193 | 173 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Height $(\mathrm{cm})$ of Main Opponent | 171 | 180 | 173 | 175 | 188 | 178 |
+
+13. Heights of Mothers and Daughters Listed below are heights (in.) of mothers and their first daughters. The data are from a journal kept by Francis Galton. (See Data Set 10 "Family Heights" in Appendix B.) Use a 0.05 significance level to test the claim that there is no difference in heights between mothers and their first daughters.
+
+| Height of Mother | 68.0 | 60.0 | 61.0 | 63.5 | 69.0 | 64.0 | 69.0 | 64.0 | 63.5 | 66.0 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Height of Daughter | 68.5 | 60.0 | 63.5 | 67.5 | 68.0 | 65.5 | 69.0 | 68.0 | 64.5 | 63.0 |
+
+14. Heights of Fathers and Sons Listed below are heights (in.) of fathers and their first sons. The data are from a journal kept by Francis Galton. (See Data Set 10 "Family Heights" in Appendix B.) Use a 0.05 significance level to test the claim that there is no difference in heights between fathers and their first sons.
+
+| Height of Father | 72.0 | 66.0 | 69.0 | 70.0 | 70.0 | 70.0 | 70.0 | 75.0 | 68.2 | 65.0 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Height of Son | 73.0 | 68.0 | 68.0 | 71.0 | 70.0 | 70.0 | 71.0 | 71.0 | 70.0 | 63.0 |
+
+15. Hypnotism for Reducing Pain A study was conducted to investigate the effectiveness of hypnotism in reducing pain. Results for randomly selected subjects are given in the accompanying table (based on "An Analysis of Factors That Contribute to the Efficacy of Hypnotic Analgesia," by Price and Barber, Journal of Abnormal Psychology, Vol. 96, No. 1). The values are before and after hypnosis; the measurements are in centimeters on a pain scale. Higher values correspond to greater levels of pain. Construct a $95 \%$ confidence interval for the mean of the "before/after" differences. Does hypnotism appear to be effective in reducing pain?
+
+| Subject | A | B | C | D | E | F | G | H |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Before | 6.6 | 6.5 | 9.0 | 10.3 | 11.3 | 8.1 | 6.3 | 11.6 |
+| After | 6.8 | 2.4 | 7.4 | 8.5 | 8.1 | 6.1 | 3.4 | 2.0 |
+
+16. Gosset Data Listed below are paired data from W. S. Gosset, who introduced us to the famous $t$ distribution. The values are hours of sleep gained or lost by 10 patients after each of two different sleep treatments (based on data from "Probable Error of the Mean," by W. S. Gosset, Biometrica, Vol. 6).
+
+a. Use a 0.01 significance level to test the claim that both sleep treatments have the same effect.
+
+b. Construct the confidence interval that could be used for the hypothesis test described in part (a). What feature of the confidence interval leads to the same conclusion reached in part (a)?
+
+| Dextro | 0.7 | -1.6 | -0.2 | -1.2 | -1.0 | 3.4 | 3.7 | 0.8 | 0.0 | 2.0 |
+| :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | :--- |
+| Laevo | 1.9 | 0.8 | 1.1 | 0.1 | -0.1 | 4.4 | 5.5 | 1.6 | 4.6 | 3.4 |
+
+Larger Data Sets. In Exercises 17-24, use the indicated Data Sets from Appendix B. The complete data sets can be found at www.TriolaStats.com. Assume that the paired sample data are simple random samples and the differences have a distribution that is approximately normal.
+
+17. Measured and Reported Weights Repeat Exercise 5 using all of the 2971 measured and reported weights (lb) of females listed in Data Set 4 "Measured and Reported" in Appendix B. Did the larger data set have much of an effect on the results?
+
+18. Measured and Reported Weights Repeat Example 1 using all of the 2784 measured and reported weights of males listed in Data Set 4 "Measured and Reported" in Appendix B. Did the larger data set have much of an effect on the results?
+
+19. Oscars Repeat Exercise 11 "Oscars" using all of the sample data from Data Set 21 "Oscar Winner Age" in Appendix B. Note that the pairs of data consist of ages that are matched according to the year in which the Oscars were won. Again use a significance level of 0.05 .
+
+20. Heights of Presidents Repeat Exercise 12 "Heights of Presidents" using all of the sample data from Data Set 22 "Presidents" in Appendix B.

@@ -1,0 +1,321 @@
+# Chapter 2
+
+## Business Applications
+
+### 2.1 Market Equilibrium Problems
+
+Link to unworked set of worksheets used in this section ${ }^{1}$
+
+Link to worksheets used in this section ${ }^{2}$
+
+<!-- START OF TOPIC -->
+As we mentioned in the previous chapter, many functions are locally linear, so if we restrict the domain the function will appear linear. Thus, we often start with linear models when trying to understand a situation. In this section, we look at the concepts of supply and demand and market equilibrium. For our examples in this section we will assume that the functions are linear in the range we care about.
+
+### 2.1.1 Supply and Demand and Market Equilibrium
+
+The normal laws of supply and demand assume we are in a market with many producers and consumers, operating independently, all of them looking out for their own best interests. We expect that when the price goes up, more producers are willing to sell but fewer consumers are willing to buy. Conversely, when the price goes down, fewer producers are willing to sell but more consumers are willing to buy.
+
+Consider the example of gasoline prices. Different prices will make some areas of exploration and production profitable or not profitable. When prices go up, new wells get drilled. If prices go down too far, stripper wells cease being profitable and are shut down. From the consumer side, when prices go up, more people look at mass transit or getting a more fuel-efficient vehicle. When prices go down, it is easier to think about a road trip.
+
+The law of supply looks at the economy from the supplier's point of view. Price and quantity available for sale always move in the same direction. If the price goes up we can assume that all the old suppliers are still willing to sell at the higher price, but some more suppliers may enter the market. If the price goes down, no new suppliers will enter the market, and some old suppliers may leave the market. For a linear model:
+
+$$
+\text { slope of supply curve }=\frac{\text { change in price }}{\text { change in quantity supplied }}=\frac{\Delta p}{\Delta q}>0
+$$[^0]
+
+The law of demand looks at the economy from the consumer's point of view. Price and quantity available for sale always move in the opposite direction. If the price goes down, we can assume that all the old consumers are still willing to buy at the lower price, but some more consumers may enter the market. If the price goes up, no new consumers will enter the market, and some old consumers may leave the market. For a linear model:
+
+$$
+\text { slope of demand curve }=\frac{\text { change in price }}{\text { change in quantity demanded }}=\frac{\Delta p}{\Delta q}<0
+$$
+
+When we look at a graph of the supply price graph and the demand price graph on the same graph, we know the supply curve goes up as we go left to right, while the demand curve goes down. From the properties of lines we know there is a single point where such a pair of lines can intersect. It is at the point where the amount of goods offered for a price equals the amount of goods desired for the same price.
+
+- This intersection of the supply and the demand functions is called the point of market equilibrium, or equilibrium point.
+
+- The price at this point is referred to as the equilibrium price.
+
+- The standard economic theory says that a free and open market will naturally settle on the equilibrium price.
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-2.jpg?height=616&width=702&top_left_y=1275&top_left_x=706)
+
+<!-- START OF EXAMPLE -->
+## Example 2.1.1 Starting With Formulas.
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-3.jpg?height=404&width=924&top_left_y=305&top_left_x=599)
+
+Interactive ${ }^{3}$
+
+Figure 2.1.2 Video presentation of this example
+
+Suppose $q$ denotes quantity, and the supply price for widgets is given by
+
+$$
+\text { SupplyPrice }=\$ 6+\frac{q}{100}
+$$
+
+We are also told the demand price is given by
+
+$$
+\text { DemandPrice }=\$ 18-\frac{2 q}{100}
+$$
+
+Find the equilibrium price and quantity.
+
+Solution 1 (Solution (a)). We have started with an example that we can do by basic algebra without any technology. Subtracting the two equations, we see that
+
+$$
+0=\$ 12-\frac{3 q}{100}
+$$
+
+Some straightforward algebra shows that the equilibrium quantity is 400 . Substituting back into either equation gives an equilibrium price of $\$ 10$.
+
+Solution 2 (Solution (b)). While we can do this example by hand, we also want to use it to set up a solution with Excel, since we may want help on problems where the numbers are not as nice. Our plan is to use Goal Seek to find the intersection. We need a cell where we can solve the problem by forcing the cell to have a value of zero.
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-3.jpg?height=51&width=471&top_left_y=1720&top_left_x=816)
+
+10 =6+A2/100 = 18-2*A2/100 =C2-B2
+
+```
+
+When cell D2 is zero, the supply price will be the same as the demand price. We now invoke Goal Seek.
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-3.jpg?height=269&width=639&top_left_y=1931&top_left_x=732)
+
+As expected, it finds equilibrium when \(q=400\).
+<!-- END OF EXAMPLE -->
+
+We need to do a bit more work when we are simply given data points and need to find the supply and demand curves.
+
+\footnotetext{
+
+\({ }^{3}\) www.youtube.com/watch?v=ulx0bKHKrVY
+
+}
+
+<!-- START OF EXAMPLE -->
+\section*{Example 2.1.3 Starting With Data.}
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-4.jpg?height=400&width=924&top_left_y=306&top_left_x=599)
+
+Interactive \({ }^{4}\)
+
+Figure 2.1.4 Video presentation of this example
+
+My market data indicates customers will buy 700 gizmos if they are priced at \(\$ 13\) each. If the price rises to \(\$ 15\), they will only buy 500 . If the price is \(\$ 12\) a unit, the producers will make 400 gizmos. If the price rises to \(\$ 13\), they will produce 600 gizmos. Assume that the supply and demand curves are linear for between 300 and 1000 gizmos. Find the equilibrium point for the gizmo market.
+
+Solution. We start by making a chart for the values given. We add a scatterplot so that we can see the values.
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-4.jpg?height=290&width=851&top_left_y=1140&top_left_x=629)
+
+Next we add linear trendlines for both the supply and demand. We select the option to show the equations.
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-4.jpg?height=287&width=849&top_left_y=1553&top_left_x=627)
+
+The projected equations are:
+
+\[
+\begin{aligned}
+\text { SupplyPrice } & =0.005 * \text { Quantity }+10 \\
+\text { Dprice } & =-0.01 * \text { Quantity }+20
+\end{aligned}
+\]
+
+We set up columns for the projected supply and demand curves. We also add a column for the difference so that we can use Goal seek to find the equilibrium point.
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-5.jpg?height=206&width=865&top_left_y=228&top_left_x=627)
+
+It is then straightforward to see that the equilibrium quantity is 666.67 and the equilibrium price is \(\$ 13.33\).
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-5.jpg?height=344&width=852&top_left_y=557&top_left_x=628)
+
+There is one more detail worth noting from this last example. Depending on the units used, the slope can be very close to zero. If we are selling tens of millions of units for a price under a dollar, the change in price of a penny may correspond to a change in quantity of several thousand. Make sure to include enough digits for your equation to be meaningful.
+<!-- END OF EXAMPLE -->
+
+<!-- START OF EXAMPLE -->
+\section*{Example 2.1.5 Computing Sales.}
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-5.jpg?height=402&width=924&top_left_y=1284&top_left_x=599)
+
+Interactive \({ }^{5}\)
+
+Figure 2.1.6 Video presentation of this example
+
+We have obtained the following data for sales of gizmos in our location.
+
+\begin{tabular}{cccccccc}
+\hline quantity & 653 & 762 & 847 & 943 & 1050 & 1130 & 1260 \\
+\hline Supply price & 5.52 & & 6.20 & & 6.85 & & 7.48 \\
+\hline Demand price & & 6.68 & & 6.50 & 6.38 & 6.31 & \\
+\hline
+\end{tabular}
+
+Assume the supply and demand curves are linear for quantities between 600 and 1300. Find the best fitting lines for the supply and demand functions. Find the equilibrium point. Make a chart listing how many we can sell for \(\$ 6.40\) and \(\$ 6.60\). Remember that sales will be the minimum of the supply and the demand.
+
+Solution. We start by putting the data into a spreadsheet and finding the best fitting lines. We select the option to show the equations in the chart.
+
+\footnotetext{
+
+\({ }^{4}\) www. youtube.com/watch?v=ZYZhgmFvvtc
+
+}
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-6.jpg?height=379&width=854&top_left_y=228&top_left_x=625)
+
+The supply and demand functions are:
+
+\[
+\begin{aligned}
+\text { SupplyPrice } & =.0032 * \text { Quantity }+3.44 \\
+\text { DemandPrice } & =-0.0010 * \text { Quantity }+7.46
+\end{aligned}
+\]
+
+We add columns for the projected supply and demand prices, using the equations obtained from the best fitting lines. We also add a column, and compute the difference of the supply and demand functions. We can now use goal seek to solve the problem.
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-6.jpg?height=529&width=637&top_left_y=1020&top_left_x=739)
+
+We now use Goal Seek to find the equilibrium point.
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-6.jpg?height=257&width=851&top_left_y=1628&top_left_x=629)
+
+At equilibrium we sell 956 gizmos at \(\$ 6.50\). To find sales at \(\$ 6.40\) and \(\$ 6.60\), we use Goal Seek to get those values at both supply and demand prices.
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_fe550ea7f98b3391cffcg-6.jpg?height=361&width=528&top_left_y=2042&top_left_x=793)
+
+We see that we can sell 1055 gizmos at \(\$ 6.40\), but can only obtain 925 . Thus our sales at \(\$ 6.40\) will be 925 . At \(\$ 6.60\) we can obtain 987 gizmos, but can only sell 855 . Thus our sales at \(\$ 6.60\) will be 855 . We can eliminate a step in this process if we recall that below equilibrium price the constraint is supply, while above equilibrium price the constraint will be demand.
+<!-- END OF EXAMPLE -->
+<!-- END OF TOPIC -->
+
+\subsection*{2.1.2 Exercises 2.1 Equilibrium Problems}
+
+1. Reading check, Market Equilibrium Problems. This question checks your reading comprehension of the material is section 2.1, Market Equilibrium Problems, of Business Calculus with Excel. Based on your reading, select all statements that are correct. There may be more than one correct answer. The statements may appear in what seems to be a random order.
+
+A The slope of the demand curve is always positive.
+
+B The standard economic theory says that a free and open market will naturally settle on the equilibrium price.
+
+C This intersection of the supply and the demand functions is called the point of market equilibrium, or equilibrium point.
+
+D The law of supply looks at the economy from the supplier's point of view.
+
+E If the supply and demand curves are unlabeled, there is no way to guess which is which.
+
+F The law of demand looks at the economy from the consumer's point of view.
+
+G The slope of the supply curve is always positive.
+
+H None of the above
+
+Exercise Group. Given the equations of the supply and demand curves:
+
+(a) Evaluate the curves at \(q_{0}\).
+
+(b) Find the market equilibrium.
+
+2. Given SupplyPrice \(=3\) Quantity +10 and DemandPrice \(=-2\) Quantity +30 , with \(q_{0}=6\).
+
+3. Given \(p_{s}=2 q+20\) and \(p_{d}=-q+200\), with \(q_{0}=40\).
+
+4. Given SupplyPrice \(=.2 q+157.3\) and DemandPrice \(=-0.01 q+3468.9\), with \(q_{0}=6000\).
+
+5. Given \(p_{s}=0.0035 q+23\) and \(p_{d}=-0.0027 q+463\), with \(q_{0}=46,798\).
+
+6. I am given \(p=-2 q+100\) and \(p=3 q-30\), as my supply and demand curves, but am not told which is which. Determine which curve is the supply curve and explain how you did it. What limits can you put on the domain of the supply and demand functions?
+
+Exercise Group. For Exercise 2.1.2.7-2.1.2.10, given the supply and demand data:
+
+(a) Find equations of the supply and demand curves, assuming they are both linear.
+
+(b) Find the market equilibrium.
+
+\footnotetext{
+
+\({ }^{5}\) www. youtube. com/watch?v=yBqKOI11Bds
+
+}
+
+7. Given supply and demand data:
+
+\begin{tabular}{ccc}
+\hline quantity & 50 & 100 \\
+\hline Supply price & 4 & 10 \\
+\hline Demand price & 9 & 5 \\
+\hline
+\end{tabular}
+
+8. Given supply and demand data:
+
+\begin{tabular}{ccccc}
+\hline quantity & 60 & 70 & 90 & 100 \\
+\hline Supply price & 14 & & 20 & \\
+\hline Demand price & & 19 & & 16 \\
+\hline
+\end{tabular}
+
+9. Given supply and demand data:
+
+\begin{tabular}{ccccc}
+\hline quantity & 4356 & 4792 & 6503 & 7038 \\
+\hline Supply price & \(\$ 1.00\) & & \(\$ 1.15\) & \\
+\hline Demand price & & \(\$ 1.10\) & & \(\$ .98\) \\
+\hline
+\end{tabular}
+
+10. Given supply and demand data:
+
+\begin{tabular}{cccc}
+\hline quantity & 5378 & 7984 & 8352 \\
+\hline Supply price & \(\$ 8.00\) & \(\$ 9.50\) & \\
+\hline Demand price & \(\$ 12.00\) & & \(\$ 10.00\) \\
+\hline
+\end{tabular}
+
+Exercise Group. For Exercise 2.1.2.11-2.1.2.13, given the supply and demand data:
+
+(a) Find equations of the supply and demand curves, assuming they are both linear
+
+(b) Find the market equilibrium.
+
+(c) Find the projected supply and demand prices for the extra quantities given.
+
+11. Given the supply and demand data:
+
+\begin{tabular}{ccccccc}
+\hline quantity & 100 & 120 & 140 & 160 & 180 & 155 \\
+\hline Supply price & 10.5 & 11.8 & 13.9 & 16.3 & 17.5 & \\
+\hline Demand price & 21.3 & 18.1 & 14.7 & 12.3 & 8.6 & \\
+\hline
+\end{tabular}
+
+12. Given the supply and demand data:
+
+\begin{tabular}{cccccccc}
+\hline quantity & 5021 & 6051 & 6968 & 7901 & 9023 & 9917 & 7500 \\
+\hline Supply price & 13.18 & & 16.76 & & 17.89 & 19.32 & \\
+\hline Demand price & & 19.69 & 18.78 & 18.05 & & 17.61 & \\
+\hline
+\end{tabular}
+
+13. Given the supply and demand data:
+
+\begin{tabular}{ccccccccc}
+\hline quantity & 3160 & 3615 & 4092 & 4462 & 4837 & 5261 & 5579 & 6000 \\
+\hline Supply price & & 20.54 & 20.70 & & 22.37 & 22.43 & & \\
+\hline Demand price & 25.31 & & & 18.91 & 17.04 & & 14.37 & \\
+\hline
+\end{tabular}
+
+<!-- START OF TOPIC -->
+\subsection*{2.2 Modeling Revenue, Costs, and Profit}
+
+Link to unworked worksheets used in this section \({ }^{1}\)
+
+\footnotetext{
+
+\({ }^{1}\) mathstat.slu.edu/ may/ExcelCalculus/external/Examples/ Section-2-2-Examples-unworked.xlsx
+
+}```
+<!-- END OF TOPIC -->
+
+[^0]:    ${ }^{1}$ mathstat.slu.edu/ may/ExcelCalculus/external/Examples/ Section-2-1-Examples-unworked.xlsx
+
+${ }^{2}$ mathstat.slu.edu/ may/ExcelCalculus/external/Examples/ Section-2-1-Examples.xlsx

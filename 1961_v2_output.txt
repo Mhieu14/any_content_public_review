@@ -1,0 +1,650 @@
+37. Finding Critical $r$ Values Table A-6 lists critical values of $r$ for selected values of $n$ and $\alpha$. More generally, critical $r$ values can be found by using the formula
+
+$$
+r=\frac{t}{\sqrt{t^{2}+n-2}}
+$$
+
+where the $t$ value is found from the table of critical $t$ values (Table A-3) assuming a two-tailed case with $n-2$ degrees of freedom. Use the formula for $r$ given here and in Table A-3 (with $n-2$ degrees of freedom) to find the critical $r$ values corresponding to $H_{1}: \rho \neq 0, \alpha=0.05$, and $n=703$ as in Exercises 29-32.
+
+<!-- START OF TOPIC -->
+# 10-2 Regression
+
+Key Concept This section presents methods for finding the equation of the straight line that best fits the points in a scatterplot of paired sample data. That best-fitting straight line is called the regression line, and its equation is called the regression equation. We can use the regression equation to make predictions for the value of one of the variables, given some specific value of the other variable. In Part 2 of this section we discuss marginal change, influential points, and residual plots as tools for analyzing correlation and regression results.
+
+## PART 1 Basic Concepts of Regression
+
+In some cases, two variables are related in a deterministic way, meaning that given a value for one variable, the value of the other variable is exactly determined without any error, as in the equation $y=2.54 x$ for converting a distance $x$ from inches to centimeters. Such equations are considered in algebra courses, but statistics courses focus on probabilistic models, which are equations with a variable that is not determined completely by the other variable. For example, the height of a child cannot be determined completely by the height of the father and/or mother. Sir Francis Galton (1822-1911) studied the phenomenon of heredity and showed that when tall or short couples have children, the heights of those children tend to regress, or revert to the more typical mean height for people of the same gender. We continue to use Galton's "regression" terminology, even though our data do not involve the same height phenomena studied by Galton.
+
+## DEFINITIONS
+
+Given a collection of paired sample data, the regression line (or line of best fit, or leastsquares line) is the straight line that "best" fits the scatterplot of the data. (The specific criterion for the "best-fitting" straight line is the "least-squares" property described later.)
+
+## The regression equation
+
+$$
+\hat{y}=b_{0}+b_{1} x
+$$
+
+algebraically describes the regression line. The regression equation expresses a relationship between $x$ (called the explanatory variable, or predictor variable, or independent variable) and $\hat{y}$ (called the response variable or dependent variable).
+
+The preceding definition shows that in statistics, the typical equation of a straight line $y=m x+b$ is expressed in the form $\hat{y}=b_{0}+b_{1} x$, where $b_{0}$ is the $y$-intercept and $b_{1}$ is the slope. The values of the slope $b_{1}$ and $y$-intercept $b_{0}$ can be easily found by using any one of the many computer programs and calculators designed to provide those values, as illustrated in Example 1. The values of $b_{1}$ and $b_{0}$ can also be found with manual calculations, as shown in Example 2.
+
+## KEY ELEMENTS
+
+## Finding the Equation of the Regression Line
+
+## Objective
+
+Find the equation of a regression line.
+
+## Notation for the Equation of a Regression Line
+
+|  | Sample Statistic | Population Parameter |
+| :--- | :---: | :---: |
+| $y$-intercept of regression line | $b_{0}$ | $\beta_{0}$ |
+| Slope of regression line | $b_{1}$ | $\beta_{1}$ |
+| Equation of the regression line | $\hat{y}=b_{0}+b_{1} x$ | $y=\beta_{0}+\beta_{1} x$ |
+
+Requirements
+
+1. The sample of paired $(x, y)$ data is a random sample of quantitative data.
+
+2. Visual examination of the scatterplot shows that the points approximate a straight-line pattern.*
+
+3. Outliers can have a strong effect on the regression equation, so remove any outliers if they are known to be errors. Consider the effects of any outliers that are not known errors. In particular, consider the effects of any outliers that dramatically affect the regression line.*
+
+*Note: Requirements 2 and 3 above are simplified attempts at checking these formal requirements for regression analysis:
+
+- For each fixed value of $x$, the corresponding values of $y$ have a normal distribution.
+
+- For the different fixed values of $x$, the distributions of the corresponding $y$-values all have the same standard deviation. (This is violated if part of the scatterplot shows points very close to the regression line while another portion of the scatterplot shows points that are much farther away from the regression line. See the discussion of residual plots in Part 2 of this section.)
+
+- For the different fixed values of $x$, the distributions of the corresponding $y$ values have means that lie along the same straight line.
+
+The methods of this section are not seriously affected if departures from normal distributions and equal standard deviations are not too extreme.
+
+Formulas for Finding the Slope $b_{1}$ and $y$-Intercept $b_{0}$ in the Regression Equation $\hat{y}=b_{0}+b_{1} x$
+
+FORMULA 10-3 Slope: $\quad b_{1}=r \frac{s_{y}}{s_{x}}$
+
+FORMULA 10-4
+
+$$
+\boldsymbol{y} \text {-intercept: } \quad b_{0}=\bar{y}-b_{1} \bar{x}
+$$
+
+where $r$ is the linear correlation coefficient, $s_{y}$ is
+
+the standard deviation of the $y$ values, and $s_{x}$ is the standard deviation of the $x$ values.
+
+The slope $b_{1}$ and $y$-intercept $b_{0}$ can also be found using the following formulas that are useful for manual calculations or writing computer programs:
+
+$$
+b_{1}=\frac{n(\Sigma x y)-(\Sigma x)(\Sigma y)}{n\left(\Sigma x^{2}\right)-(\Sigma x)^{2}} \quad b_{0}=\frac{(\Sigma y)\left(\Sigma x^{2}\right)-(\Sigma x)(\Sigma x y)}{n\left(\Sigma x^{2}\right)-(\Sigma x)^{2}}
+$$
+
+## Rounding the Slope $b_{1}$ and the $y$-Intercept $b_{0}$
+
+Round $b_{1}$ and $b_{0}$ to three significant digits. It's difficult to provide a simple universal rule for rounding values of $b_{1}$ and $b_{0}$, but this rule will work for most situations in this book. (Depending on how you round, this book's answers to examples and exercises may be slightly different from your answers.)
+
+<!-- START OF EXAMPLE -->
+## EXAMPLE 1 Using Technology to Find the Regression Equation
+
+Table 10-1 from the Chapter Problem is reproduced here. (Jackpot amounts are in millions of dollars and numbers of tickets sold are in millions.) Use technology to find the equation of the regression line in which the explanatory variable (or $x$ variable) is the amount of the lottery jackpot and the response variable (or $y$ variable) is the corresponding number of lottery tickets sold.
+
+TABLE 10-1 Lottery Tickets Sold and Jackpot Amounts
+
+| Jackpot | 334 | 127 | 300 | 227 | 202 | 180 | 164 | 145 | 255 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Tickets | 54 | 16 | 41 | 27 | 23 | 18 | 18 | 16 | 26 |
+
+## SOLUTION
+
+REQUIREMENT CHECK (1) The data are a simple random sample. (2) The scatterplot in Figure 10-1 on page 509 shows that the pattern of points is reasonably close to a straight-line pattern. (3) The scatterplot also shows that there are no outliers. The requirements are satisfied. $\mathbb{C}$
+
+Technology The use of technology is recommended for finding the equation of a regression line. Shown below are the results from different technologies. Minitab and XLSTAT provide the actual equation; the other technologies list the values of the $y$-intercept and the slope. All of these technologies show that the regression equation can be expressed as $\hat{y}=-10.9+0.174 x$, where $\hat{y}$ is the predicted number of tickets sold and $x$ is the amount of the jackpot.
+
+## Statdisk
+
+| Regression Results: |  |
+| :--- | :--- |
+| $Y=$ b0 + b1X: |  |
+| $Y$ Intercept, b0: | -10.87169 |
+| slope, b1: | 0.17417 |
+
+Excel (XLSTAT)
+
+```
+Equation of the model (Tickets):
+
+Tickets = -10.87169+0.17417* Jackpot
+```
+
+## SPSS
+
+| Model |  | Unstandardized Coefficients |  | Standardized <br> Coefficients <br> Beta | $t$ | Sig. |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  |  | $B$ | Std. Error |  |  |  |
+| 1 | (Constant) | -10.872 | 5.005 |  | -2.172 | .066 |
+|  | Jackpot | .174 | .022 | 947 | 7.828 | .000 |
+
+JMP
+
+| Parameter Estimates |  |  |  |  |
+| :---: | :---: | :---: | :---: | :---: |
+| Term | Estimate | Std Error | $t$ Ratio | Prob> $\|t\|$ |
+| Intercept | -10.87169 | 5.004925 | -2.17 | 0.0664 |
+| Column 1 | 0.1741702 | 0.02225 | 7.83 | $0.0001^{*}$ |
+
+## StatCrunch
+
+## Simple linear regression results:
+
+Dependent Variable: Tickets Independent Variable: Jackpot Tickets $=-10.871686+0.17417021$ Jackpot
+
+We should know that the regression equation is an estimate of the true regression equation for the population of paired data. This estimate is based on one particular set of sample data, but another sample drawn from the same population would probably lead to a slightly different equation.
+<!-- END OF EXAMPLE -->
+
+<!-- START OF EXAMPLE -->
+## EXAMPLE 2 Using Manual Calculations to Find the Regression Equation
+
+Use the sample data in Table 10-1 (shown in Example 1). Use Formulas 10-3 and 10-4 to find the equation of the regression line in which the explanatory variable (or $x$ variable) is the jackpot amount and the response variable (or $y$ variable) is the corresponding number of tickets sold.
+
+## SOLUTION
+
+REQUIREMENT CHECK The requirements are verified in Example 1.
+
+We begin by finding the slope $b_{1}$ using Formula 10-3 as follows (with extra digits included for greater accuracy). Remember, $r$ is the linear correlation coefficient, $s_{y}$ is the standard deviation of the sample $y$ values, and $s_{x}$ is the standard deviation of the sample $x$ values.
+
+$$
+b_{1}=r \frac{s_{y}}{s_{x}}=0.947349 \cdot \frac{12.96255}{70.50611}=0.174170
+$$
+
+After finding the slope $b_{1}$, we can now use Formula 10-4 to find the $y$-intercept as follows:
+
+$$
+b_{0}=\bar{y}-b_{1} \bar{x}=26.55556-(0.174170)(214.88889)=-10.87164
+$$
+
+After rounding, the slope is $b_{1}=0.174$ and the $y$-intercept is $b_{0}=-10.9$. We can now express the regression equation as $\hat{y}=-10.9+0.174 x$, where $\hat{y}$ is the predicted number of tickets sold and $x$ is the amount of the jackpot.
+<!-- END OF EXAMPLE -->
+
+YOUR TURN. Do Exercise 13 "Powerball Jackpots and Tickets Sold."
+
+<!-- START OF EXAMPLE -->
+## EXAMPLE 3 Graphing the Regression Line
+
+Graph the regression equation $\hat{y}=-10.9+0.174 x$ (found in Examples 1 and 2) on the scatterplot of the jackpot/tickets data from Table 10-1 and examine the graph to subjectively determine how well the regression line fits the data.
+
+## SOLUTION
+
+Shown below is the Minitab display of the scatterplot with the graph of the regression line included. We can see that the regression line fits the points reasonably well.
+<!-- END OF EXAMPLE -->
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_d74bdff4a70d6b1706ccg-04.jpg?height=413&width=651&top_left_y=2013&top_left_x=932)
+
+## Making Predictions
+
+Regression equations are often useful for predicting the value of one variable, given some specific value of the other variable. When making predictions, we should consider the following:
+
+1. Bad Model: If the regression equation does not appear to be useful for making predictions, don't use the regression equation for making predictions. For bad models, the best predicted value of a variable is simply its sample mean. However, the sample mean is not a good predicted value because it is the predicted value for any value of the other variable.
+
+2. Good Model: Use the regression equation for predictions only if the graph of the regression line on the scatterplot confirms that the regression line fits the points reasonably well.
+
+3. Correlation: Use the regression equation for predictions only if the linear correlation coefficient $r$ indicates that there is a linear correlation between the two variables (as described in Section 10-1).
+
+4. Scope: Use the regression line for predictions only if the data do not go much beyond the scope of the available sample data. (Predicting too far beyond the scope of the available sample data is called extrapolation, and it could result in bad predictions.)
+
+Figure 10-5 summarizes a strategy for predicting values of a variable $y$ when given some value of $x$. Figure 10-5 shows that if the regression equation is a good model, then we substitute the value of $x$ into the regression equation to find the predicted value of $y$. However, if the regression equation is not a good model, the best predicted value of $y$ is simply $\bar{y}$, the mean of the $y$ values. (But if $\bar{y}$ is the best predicted value, it isn't very good because it is the predicted value of $y$ for any value of $x$.) Remember, this strategy applies to linear patterns of points in a scatterplot. If the scatterplot shows a pattern that is nonlinear (not a straight-line) pattern, other methods apply.
+
+## Postponing Death
+
+Several studies addressed the ability of people to postpone their death until after an important event.
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_d74bdff4a70d6b1706ccg-05.jpg?height=277&width=232&top_left_y=341&top_left_x=1814)
+
+For example, sociologist David Phillips analyzed death rates of Jewish men who died near Passover, and he found that the death rate dropped dramatically in the week before Passover, but rose the week after. Other researchers of cancer patients concluded that there is "no pattern to support the concept that 'death takes a holiday.'" (See "Holidays, Birthdays, and Postponement of Cancer Death," by Young and Hade, Journal of the American Medical Association, Vol. 292, No. 24.) Based on records of 1.3 million deaths, this more recent study found no relationship between the time of death and Christmas, Thanksgiving, or the person's birthday. The findings were disputed by David Phillips, who said that the study focused on cancer patients, but they are least likely to have psychosomatic effects.
+
+## Strategy for Predicting Values of $\boldsymbol{y}$
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_d74bdff4a70d6b1706ccg-05.jpg?height=616&width=1017&top_left_y=1771&top_left_x=367)
+
+FIGURE 10-5 Recommended Strategy for Predicting Values of $y$
+
+## Machine Learning
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_d74bdff4a70d6b1706ccg-06.jpg?height=307&width=272&top_left_y=313&top_left_x=59)
+
+A relatively new and growing field is machine learning. Machine learning in a system (such as a self-driving car) uses artificial intelligence (AI) in a way that enables the system to learn from experience instead of direct human intervention. This new field requires the use of statistics, including topics such as descriptive statistics, outlier detection, data sampling, experimental design, determining when results are significant, normal distributions, correlation, confidence intervals, and hypothesis testing. Because these topics are included in this book, this book becomes a great beginning in the study of machine learning.
+
+<!-- START OF EXAMPLE -->
+## EXAMPLE 4 Making Predictions
+
+a. Use the jackpot/tickets data from Table 10-1 on page 507 to predict the number of lottery tickets sold when the jackpot is $\$ 625$ million. How close is the predicted value to the actual value of 90 million tickets that were actually sold when the Powerball lottery had a jackpot of $\$ 625$ million?
+
+b. Predict the IQ score of an adult who is exactly 175 cm tall.
+
+## SOLUTION
+
+a. Good Model: Use the Regression Equation for Predictions. The regression line fits the points well, as shown in Example 3. Also, there is a linear correlation between Powerball jackpot amounts and numbers of tickets sold, as shown in Section 10-1. Because the regression equation $\hat{y}=-10.9+0.174 x$ is a good model, substitute $x=625$ into the regression equation to get a predicted value of 97.9 million tickets sold. The actual number of tickets sold was 90 million, so the predicted value of 97.9 million tickets is pretty good.
+
+b. Bad Model: Use $\bar{y}$ for predictions. There is no correlation between height and IQ score, so we know that a regression equation is not a good model. Therefore, the best predicted IQ score value is the mean IQ score, which is 100 .
+
+## INTERPRETATION
+
+Note that in part (a), the paired data result in a good regression model, so the predicted number of tickets sold is found by substituting the value of $x=625$ into the regression equation. However, in part (b) there is no correlation between height and IQ, so the best predicted IQ score is the mean IQ score of $\bar{y}=100$.
+
+Key point: Use the regression equation for predictions only if it is a good model. If the regression equation is not a good model, use $\bar{y}$ for the predicted value of $y$.
+<!-- END OF EXAMPLE -->
+
+r YOUR TURN. Do Exercise 5 "Cars."
+<!-- END OF TOPIC -->
+
+<!-- START OF TOPIC -->
+## PART 2 Beyond the Basics of Regression
+
+In Part 2 we consider the concept of marginal change, which is helpful in interpreting a regression equation; then we consider the effects of outliers and special points called influential points. We also consider residual plots.
+
+## Interpreting the Regression Equation: Marginal Change
+
+We can use the regression equation to see the effect on one variable when the other variable changes by some specific amount.
+
+## DEFINITION
+
+In working with two variables related by a regression equation, the marginal change in a variable is the amount that it changes when the other variable changes by exactly one unit. The slope $b_{1}$ in the regression equation represents the marginal change in $y$ that occurs when $x$ changes by one unit.
+
+Let's consider the nine pairs of jackpot/ticket data included in Table 10-1 from the Chapter Problem. Those nine pairs of data result in this regression equation: $\hat{y}=-10.9+0.174 x$ (as shown in Examples 1 and 2). The slope of 0.174 tells us that if we increase the jackpot $x$ by 1 (million dollars), the predicted number of tickets sold will increase by 0.174 million (or 174,000 tickets). That is, for every additional 1 million dollars added to the jackpot amount, we expect the ticket sales to increase by 174,000 tickets. This realization has led lottery officials to adjust their rules to make winning more difficult so that jackpots will grow considerably larger and drive greater lottery ticket sales.
+
+## Outliers and Influential Points
+
+A correlation/regression analysis of bivariate (paired) data should include an investigation of outliers and influential points, defined as follows.
+
+```
+DEFINITIONS
+
+In a scatterplot, an outlier is a point lying far away from the other data points.
+
+Paired sample data may include one or more influential points, which are points
+
+that strongly affect the graph of the regression line.
+```
+
+To determine whether a point is an outlier, examine the scatterplot to see if the point is far away from the others. Here's how to determine whether a point is an influential point: First graph the regression line resulting from the data with the point included, then graph the regression line resulting from the data with the point excluded. If the regression line changes by a considerable amount, the point is influential.
+
+<!-- START OF EXAMPLE -->
+## EXAMPLE 5 Influential Point
+
+Consider the nine pairs of jackpot/ticket data from Table 10-1 in the Chapter Problem. The scatterplot located to the left below shows the regression line. If we include the additional pair of $x=980$ and $y=12$, we get the regression line shown to the right below. The additional point $(980,12)$ is an influential point because the graph of the regression line did change considerably in the right graph. Compare the two graphs to see clearly that the addition of this one pair of values has a very dramatic effect on the regression line, so that additional point is an influential point. The additional point is also an outlier because it is far from the other points.
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_d74bdff4a70d6b1706ccg-07.jpg?height=524&width=1372&top_left_y=1977&top_left_x=252)
+<!-- END OF EXAMPLE -->
+
+## Residuals and the Least-Squares Property
+
+We stated that the regression equation represents the straight line that "best" fits the data. The criterion to determine the line that is better than all others is based on the vertical distances between the original data points and the regression line. Such distances are called residuals.
+
+## DEFINITION
+
+For a pair of sample $x$ and $y$ values, the residual is the difference between the observed sample value of $y$ and the $y$ value that is predicted by using the regression equation. That is,
+
+$$
+\text { Residual }=\text { observed } y-\text { predicted } y=y-\hat{y}
+$$
+
+So far, this definition hasn't yet won any prizes for simplicity, but you can easily understand residuals by referring to Figure 10-6, which corresponds to the paired sample data shown in the margin. In Figure 10-6, the residuals are represented by the dashed lines. The paired data are plotted as red points in Figure 10-6.
+
+| $x$ | 8 | 12 | 20 | 24 |
+| ---: | ---: | ---: | ---: | ---: |
+| $y$ | 4 | 24 | 8 | 32 |
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_d74bdff4a70d6b1706ccg-08.jpg?height=739&width=809&top_left_y=1208&top_left_x=842)
+
+Consider the sample point with coordinates of $(8,4)$ plotted in Figure 10-6. We get the following:
+
+- Observed value: For $x=8$, the corresponding observed value is $y=4$.
+
+- Predicted value: If we substitute $x=8$ into the regression equation of $\hat{y}=1+x$, we get the predicted value $\hat{y}=9$.
+
+- Residual: The difference between the observed value and predicted value is the residual, so the residual is $y-\hat{y}=4-9=-5$.
+
+The regression equation represents the line that "best" fits the points according to the following least-squares property.
+
+## DEFINITION
+
+A straight line satisfies the least-squares property if the sum of the squares of the residuals is the smallest sum possible.
+
+From Figure 10-6, we see that the residuals are $-5,11,-13$, and 7 , so the sum of their squares is
+
+$$
+(-5)^{2}+11^{2}+(-13)^{2}+7^{2}=364
+$$
+
+We can visualize the least-squares property by referring to Figure 10-6, where the squares of the residuals are represented by the shaded square areas. The sum of the shaded square areas is 364 , which is the smallest sum possible. Use any other straight line, and the shaded squares will combine to produce an area larger than the combined shaded area of 364 .
+
+Fortunately, we need not deal directly with the least-squares property when we want to find the equation of the regression line. Calculus has been used to build the least-squares property into Formulas $10-3$ and 10-4. Because the derivations of these formulas require calculus, we don't include the derivations in this text.
+
+## Residual Plots
+
+In this section and the preceding section we listed simplified requirements for the effective analyses of correlation and regression results. We noted that we should always begin with a scatterplot, and we should verify that the pattern of points is approximately a straight-line pattern. We should also consider outliers. A residual plot can be another helpful tool for analyzing correlation and regression results and for checking the requirements necessary for making inferences about correlation and regression.
+
+## DEFINITION
+
+A residual plot is a scatterplot of the $(x, y)$ values after each of the $y$-coordinate values has been replaced by the residual value $y-\hat{y}$ (where $\hat{y}$ denotes the predicted value of $y$ ). That is, a residual plot is a graph of the points $(x, y-\hat{y})$.
+
+To construct a residual plot, draw a horizontal reference line through the residual value of 0 , then plot the paired values of $(x, y-\hat{y})$. Because the manual construction of residual plots can be tedious, the use of technology is strongly recommended.
+
+## Usefulness of a Residual Plot
+
+- A residual plot helps us determine whether the regression line is a good model of the sample data.
+
+- A residual plot helps us to check the requirement that for different values of $x$, the corresponding $y$ values all have the same standard deviation.
+
+## Criteria for Residual Plot
+
+- The residual plot should not have any obvious pattern (not even a straight-line pattern). (This lack of a pattern confirms that a scatterplot of the sample data is a straight-line pattern instead of some other pattern.)
+
+- The residual plot should not become much wider (or thinner) when viewed from left to right. (This confirms the requirement that for the different fixed values of $x$, the distributions of the corresponding $y$ values all have the same standard deviation.)
+
+<!-- START OF EXAMPLE -->
+## EXAMPLE 6 Residual Plot
+
+The jackpot/ticket data from Table 10-1 are used to obtain the accompanying Statdisk-generated residual plot, which is a plot of the $(x, y-\hat{y})$ values. See that this residual plot satisfies the preceding two general criteria for residual plots.
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_d74bdff4a70d6b1706ccg-10.jpg?height=633&width=654&top_left_y=979&top_left_x=925)
+
+See the three residual plots below. The leftmost residual plot suggests that the regression equation is a good model. The middle residual plot shows a distinct pattern, suggesting that the sample data do not follow a straight-line pattern as required. The rightmost residual plot becomes thicker, which suggests that the requirement of equal standard deviations is violated.
+
+Residual Plot Suggesting That the Regression Equation Is a Good Model
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_d74bdff4a70d6b1706ccg-10.jpg?height=350&width=530&top_left_y=2183&top_left_x=120)
+
+Residual Plot with an Obvious Pattern,
+
+Suggesting That the Regression
+
+Equation Is Not a Good Model
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_d74bdff4a70d6b1706ccg-10.jpg?height=342&width=524&top_left_y=2187&top_left_x=733)
+
+Residual Plot That Becomes Wider, Suggesting That the Regression Equation Is Not a Good Model
+
+![](https://cdn.mathpix.com/cropped/2024_08_09_d74bdff4a70d6b1706ccg-10.jpg?height=348&width=524&top_left_y=2184&top_left_x=1337)
+<!-- END OF EXAMPLE -->
+
+## TECH CENTER
+
+## Regression
+
+Access tech supplements, videos, and data sets at www.TriolaStats.com
+
+Statdisk
+
+1. Click Analysis in the top menu.
+
+2. Select Correlation and Regression from the dropdown menu.
+
+3. Enter the desired significance level and select the columns to be evaluated.
+
+4. Click Evaluate.
+
+5. Click Scatterplot to obtain a scatterplot with the regression line.
+
+Minitab
+1. Click Stat in the top menu.
+2. Select Regression from the dropdown menu and select
+Regression-Fit Regression Model from the submenu.
+3. Under Responses select the column that contains the de-
+pendent $y$ values. Under Continuous predictors select the
+column that contains the independent $x$ values.
+4. Click OK. The regression equation is included in the results.
+Scatterplot
+5. Click Stat in the top menu.
+6. Select Regression-Fitted Line Plot from the dropdown
+menu.
+7. Select the desired columns for the $y$ variable and $x$ variable.
+8. Select Linear under Type of Regression Model and click OK.
+TIP: Another procedure is to click on Assistant in the top menu, then
+select Regression, and Simple Regression. Complete the dialog
+box to get results, including the regression equation.
+
+StatCrunch
+1. Click Stat in the top
+menu.
+2. Select Regression
+from the dropdown
+menu, then select
+Simple Linear from
+the submenu.
+3. Select the columns to
+be used for the $x$ vari-
+able and $y$ variable.
+4. Click Compute!
+5. Click the arrow at the
+bottom of the results
+window to view the
+scatterplot with
+regression line.
+
+## TI-83/84 Plus Calculator
+
+1. Press STAT, then select TESTS in the top menu.
+
+2. Select LinRegTTest in the menu and press Enter.
+
+3. Enter the list names for the $x$ and $y$ variables. Enter 1 for Freq and for $\beta \& \rho$ select $\neq 0$ to test the null hypothesis of no correlation.
+
+4. Select Calculate and press ENTER to view results, which include the $y$-intercept (a) and slope (b) of the regression equation.
+
+## Excel
+
+## XLSTAT Add-In
+
+1. Click on the XLSTAT tab in the Ribbon and then click Modeling data.
+
+2. Select Linear regression from the dropdown menu.
+
+3. Enter the range of cells containing the $Y /$ Dependent variable data and $X /$ Explanatory variable data. Check the Quantitative box under $X /$ Explanatory variable. If the first data row includes a label, check the Variable labels box.
+
+4. Click the Outputs tab and ensure Correlations and Analysis of variance and Prediction and residuals are checked.
+
+5. Click OK, and the equation of the regression line will be displayed in the results
+
+## Excel (Data Analysis Add-In)
+
+1. Click on the Data tab in the Ribbon and then click the Data Analysis tab.
+
+2. Select Regression under Analysis Tools and click OK.
+
+3. For Input $Y$ Range enter the data range for the dependent $y$ variable. For Input $X$ Range enter the data range for the independent $x$ variable.
+
+4. Check the Labels box if the first row contains a label.
+
+5. Check the Line Fit Plots box and Residuals Plots box and click OK to display the results. In the Coefficients table, the slope is labeled $X$ Variable (or data label) and the $y$-intercept is labeled Intercept.
+
+TIP: The displayed graph will include a scatterplot of the original sample points along with the points that would be predicted by the regression equation. You can obtain the regression line by connecting the "predicted $y$ " points.
+
+| $\mathbf{R}$ |
+| :--- |
+| R commands: |
+| Regression results ( $y$ intercept |
+| and slope): $\operatorname{lm}(\boldsymbol{y} \sim \boldsymbol{x})$ |
+| Additional regression details: |
+| summary( $\operatorname{Im}(\boldsymbol{y} \sim \boldsymbol{x})$ ) |
+| A complete list of $R$ statistical |
+| commands is available at |
+| TriolaStats.com |
+
+## 10-2 Basic Skills and Concepts
+
+## Statistical Literacy and Critical Thinking
+
+1. Notation Using the weights (lb) and highway fuel consumption amounts (mi/gal) of the 48 cars listed in Data Set 35 "Car Data" of Appendix B, we get this regression equation: $\hat{y}=58.9-0.00749 x$, where $x$ represents weight.
+
+a. What does the symbol $\hat{y}$ represent?
+
+b. What are the specific values of the slope and $y$-intercept of the regression line?
+
+c. What is the predictor variable?
+
+d. Assuming that there is a significant linear correlation between weight and highway fuel consumption, what is the best predicted value of highway fuel consumption of a car that weighs 3000 lb ?
+
+2. Notation What is the difference between the regression equation $\hat{y}=b_{0}+b_{1} x$ and the regression equation $y=\beta_{0}+\beta_{1} x$ ?
+
+## 3. Best-Fit Line
+
+a. What is a residual?
+
+b. In what sense is the regression line the straight line that "best" fits the points in a scatterplot?
+
+4. Correlation and Slope What is the relationship between the linear correlation coefficient $r$ and the slope $b_{1}$ of a regression line?
+
+Making Predictions. In Exercises 5-8, let the predictor variable $x$ be the first variable given. Use the given data to find the regression equation and the best predicted value of the response variable. Be sure to follow the prediction procedure summarized in Figure 10-5 on page 533. Use a 0.05 significance level.
+
+5. Cars For the 12 small cars included in Data Set 35 "Car Data" from Appendix B, the weights of the cars $(x)$ are paired with the highway fuel consumption $(y)$. The 12 paired values yield $\bar{x}=2817.7 \mathrm{lb}, \bar{y}=37.3 \mathrm{mi} / \mathrm{gal}, r=-0.395, P$-value $=0.203$, and the regression equation is $\hat{y}=53.7-0.00580 x$. Find the best predicted value of the highway fuel consumption for a small car that weighs 2500 lb .
+
+6. Bear Measurements Head widths (in.) and weights (lb) were measured for 20 randomly selected bears (from Data Set 18 "Bear Measurements" in Appendix B). The 20 pairs of measurements yield $\bar{x}=6.9 \mathrm{in} ., \bar{y}=214.3 \mathrm{lb}, r=0.879, P$-value $=0.000$, and $\hat{y}=-212+61.9 x$. Find the best predicted weight of a bear given that the bear has a head width of 6.5 in .
+
+7. Height and Weight Heights (cm) and weights ( kg ) are measured for 100 randomly selected adult males (from Data Set 1 "Body Data" in Appendix B). The 100 paired measurements yield $\bar{x}=173.79 \mathrm{~cm}, \bar{y}=85.93 \mathrm{~kg}, r=0.418, P$-value $=0.000$, and $\hat{y}=-106+1.10 x$. Find the best predicted weight given an adult male who is 180 cm tall.
+
+8. Cigarette Tar and Nicotine For 25 king-size cigarettes listed in Data Set 16 "Cigarette Contents" in Appendix B, the amount $(x)$ of tar (mg) and the amount $(y)$ of nicotine (mg) are listed for each cigarette. The 25 paired amounts yield $\bar{x}=21.1 \mathrm{mg}, \bar{y}=1.26 \mathrm{mg}, r=0.245$, $P$-value $=0.237$, and the regression equation is $\hat{y}=0.883+0.0177 x$. Find the best predicted amount of nicotine for a cigarette with 10 mg of tar.
+
+Finding the Equation of the Regression Line. In Exercises 9 and 10, use the given data to find the equation of the regression line. Examine the scatterplot and identify a characteristic of the data that is ignored by the regression line.
+
+| $x$ | 10 | 8 | 13 | 9 | 11 | 14 | 6 | 4 | 12 | 7 | 5 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $y$ | 9.14 | 8.14 | 8.74 | 8.77 | 9.26 | 8.10 | 6.13 | 3.10 | 9.13 | 7.26 | 4.74 |
+
+10.
+
+| $x$ | 10 | 8 | 13 | 9 | 11 | 14 | 6 | 4 | 12 | 7 | 5 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $y$ | 7.46 | 6.77 | 12.74 | 7.11 | 7.81 | 8.84 | 6.08 | 5.39 | 8.15 | 6.42 | 5.73 |
+
+11. Effects of an Outlier Refer to the Minitab-generated scatterplot given in Exercise 9 of Section $10-1$ on page 525 .
+
+a. Using the pairs of values for all 10 points, find the equation of the regression line.
+
+b. After removing the point with coordinates $(10,10)$, use the pairs of values for the remaining 9 points and find the equation of the regression line.
+
+c. Compare the results from parts (a) and (b).
+
+12. Effects of Clusters Refer to the Minitab-generated scatterplot given in Exercise 10 of Section $10-1$ on page 525 .
+
+a. Using the pairs of values for all 8 points, find the equation of the regression line.
+
+b. Using only the pairs of values for the 4 points in the lower left corner, find the equation of the regression line.
+
+c. Using only the pairs of values for the 4 points in the upper right corner, find the equation of the regression line.
+
+d. Compare the results from parts (a), (b), and (c).
+
+Regression and Predictions. Exercises 13-28 use the same data sets as Exercises 13-28 in Section 10-1.
+
+(a) Find the regression equation, letting the first variable be the predictor (x) variable.
+
+(b) Find the indicated predicted value by following the prediction procedure summarized in Figure 10-5 on page 533.
+
+13. Powerball Jackpots and Tickets Sold Listed below are the same data from Table 10-1 in the Chapter Problem, but an additional pair of values has been added in the last column. (Jackpot amounts are in millions of dollars, ticket sales are in millions.) Find the best predicted number of tickets sold when the jackpot was actually 625 million dollars. How does the result compare to the value of 90 million tickets that were actually sold?
+
+| Jackpot | 334 | 127 | 300 | 227 | 202 | 180 | 164 | 145 | 255 | 400 |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Tickets | 54 | 16 | 41 | 27 | 23 | 18 | 18 | 16 | 26 | 17 |
+
+14. Powerball Jackpots and Tickets Sold Listed below are the same data from Table 10-1 in the Chapter Problem, but an additional pair of values has been added from actual Powerball results. (Jackpot amounts are in millions of dollars, ticket sales are in millions.) Find the best predicted number of tickets sold when the jackpot was actually 345 million dollars. How does the result compare to the value of 55 million tickets that were actually sold?
+
+| Jackpot | 334 | 127 | 300 | 227 | 202 | 180 | 164 | 145 | 255 | 625 |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Tickets | 54 | 16 | 41 | 27 | 23 | 18 | 18 | 16 | 26 | 90 |
+
+15. Taxis Use the time/tip data from the table below, which includes data from New York City taxi rides (from Data Set 32 "Taxis" in Appendix B). (The distances are in miles, the times are in minutes, the fares are in dollars, and the tips are in dollars.) Find the best predicted tip for a ride that takes 20 minutes. How does the result compare to the actual tip amount of \$4.55?
+
+| Distance | 0.68 | 2.47 | 8.51 | 12.71 | 1.65 | 1.02 | 1.32 | 0.49 |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Time | 6.00 | 18.00 | 31.00 | 27.00 | 11.00 | 8.00 | 8.00 | 2.00 |
+| Fare | 6.30 | 14.30 | 31.75 | 36.80 | 9.80 | 7.80 | 7.80 | 4.80 |
+| Tip | 1.89 | 4.29 | 2.98 | 0.00 | 1.96 | 2.34 | 0.00 | 0.00 |
+
+16. Taxis Use the distance/tip data from Exercise 15. Find the best predicted tip for a ride that is 3.10 miles. How does the result compare to the actual tip of $\$ 4.55$ ?
+
+17. Taxis Use the distance/fare data from Exercise 15 and find the best predicted fare amount for a distance of 3.10 miles. How does the result compare to the actual fare of $\$ 15.30$ ?
+
+18. Taxis Use the time/fare data from Exercise 15 and find the best predicted fare amount for a time of 20 minutes. How does the result compare to the actual fare of $\$ 15.30$ ?
+
+19. Oscars Listed below are ages of recent Oscar winners matched by the years in which the awards were won (from Data Set 21 "Oscar Winner Age" in Appendix B). Find the best predicted age of an Oscar-winning actress given that the Oscar winner for best actor is 59 years of age. How does the result compare to the actual actress age of 60 years?
+
+| Best Actor | 32 | 33 | 45 | 29 | 62 | 22 | 44 | 54 | 26 | 28 | 60 | 45 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Best Actress | 50 | 48 | 60 | 50 | 39 | 55 | 44 | 33 | 41 | 41 | 59 | 37 |
+
+20. POTUS Listed below are the heights (cm) of winning presidential candidates and their main opponents from several recent presidential elections (from Data Set 22 "Presidents" in Appendix B). Find the best predicted height of an opponent given that the president had a height of 191 cm . How close is the result to the actual opponent height of 169 cm ?
+
+| President | 192 | 182 | 177 | 185 | 188 | 188 | 183 | 188 | 191 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Opponent | 180 | 180 | 183 | 177 | 173 | 188 | 185 | 175 | 169 |
+
+21. Prices of Pizza and Subway Rides In the table below, use the pizza cost and the subway fare. (Pizza cost is in dollars per slice, subway fare and CPI are in dollars.) What is the best predicted subway fare when pizza costs $\$ 4.00$ per slice?
+
+| Year | 1960 | 1973 | 1986 | 1995 | 2002 | 2003 | 2009 | 2013 | 2015 | 2019 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Pizza Cost | 0.15 | 0.35 | 1.00 | 1.25 | 1.75 | 2.00 | 2.25 | 2.30 | 2.75 | 3.00 |
+| Subway Fare | 0.15 | 0.35 | 1.00 | 1.35 | 1.50 | 2.00 | 2.25 | 2.50 | 2.75 | 2.75 |
+| CPI | 29.6 | 44.4 | 109.6 | 152.4 | 180.0 | 184.0 | 214.5 | 233.0 | 237.0 | 252.2 |
+
+22. Subway and the CPI Use the subway/CPI data from the preceding exercise. What is the best predicted value of the CPI when the subway fare is $\$ 3.00$ ?
+
+23. CSI Statistics Listed below are foot lengths ( mm ) and heights ( mm ) of males (from Data Set 3 "ANSUR II 2012" in Appendix B). Find the best predicted height of a male with a foot length of 273 mm . How does the result compare to the actual height of 1776 mm ?
+
+| Foot Length | 282 | 278 | 253 | 259 | 279 | 258 | 274 | 262 |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Height | 1785 | 1771 | 1676 | 1646 | 1859 | 1710 | 1789 | 1737 |
+
+24. Crickets and Temperature Find the best predicted temperature at a time when a cricket chirps 3000 times in 1 minute. What is wrong with this predicted temperature?
+
+| Chirps in 1 min | 882 | 1188 | 1104 | 864 | 1200 | 1032 | 960 | 900 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Temperature ( ${ }^{\circ} \mathrm{F}$ ) | 69.7 | 93.3 | 84.3 | 76.3 | 88.6 | 82.6 | 71.6 | 79.6 |
+
+25. Cars Sales and the Super Bowl Listed below are the annual numbers of cars sold (thousands) and the numbers of points scored in the Super Bowl that same year. What is the best predicted number of Super Bowl points in a year with sales of 8423 thousand cars? How close is the predicted number to the actual result of 37 points?
+
+| Car Sales | 8175 | 8213 | 8518 | 8991 | 8635 | 8527 | 8272 | 8142 |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Super Bowl Points | 61 | 69 | 43 | 75 | 44 | 56 | 55 | 53 |
+
+26. Cheese and Engineering Listed below are weights (pounds) of per capita consumption of mozzarella cheese and the numbers of civil engineering PhD degrees awarded in various years (based on data from the U.S. Department of Agriculture and the National Science Foundation). What is the best predicted number of civil engineering PhD degrees awarded in a year when per capita cheese consumption is 12.0 pounds? Is that prediction likely to be accurate?
+
+| Cheese Consumption | 9.3 | 9.7 | 9.7 | 9.7 | 9.9 | 10.2 | 10.5 | 11.0 | 10.6 | 10.6 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Civil Engineering PhDs | 480 | 501 | 540 | 552 | 547 | 622 | 655 | 701 | 712 | 708 |
+
+27. Lemons and Car Crashes Listed below are annual data for weights (metric tons) of lemons imported from Mexico and U.S. car crash fatalities per 100,000 population. Using these data, find the best predicted crash fatality rate for a year in which there are 500 metric tons of lemon imports. Is the prediction worthwhile?
+
+| Lemon Imports | 230 | 265 | 358 | 480 | 530 |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Crash Fatality Rate | 15.9 | 15.7 | 15.4 | 15.3 | 14.9 |
+
+28. Weighing Seals with a Camera Listed below are the overhead widths (cm) of seals measured from photographs and weights ( kg ) of the seals. Using the listed data, find the best predicted weight of a seal if the overhead width measured from a photograph is 2 cm . Can the prediction be correct? If not, what is wrong?
+
+| Overhead Width | 7.2 | 7.4 | 9.8 | 9.4 | 8.8 | 8.4 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Weight | 116 | 154 | 245 | 202 | 200 | 191 |
+
+Large Data Sets. Exercises 29-32 use the same Appendix B data sets as Exercises 29-32 in Section 10-1. In each case, find the regression equation, letting the first variable be the predictor (x) variable. Find the indicated predicted values following the prediction procedure summarized in Figure 10-5 on page 533.
+
+29. Taxis Repeat Exercise 15 using all of the time/tip data from the 703 taxi rides listed in Data Set 32 "Taxis" from Appendix B.
+
+30. Taxis Repeat Exercise 16 using all of the distance/tip data from the 703 taxi rides listed in Data Set 32 "Taxis" from Appendix B.
+
+31. Taxis Repeat Exercise 17 using all of the distance/fare data from the 703 taxi rides listed in Data Set 32 "Taxis" from Appendix B.
+
+32. Taxis Repeat Exercise 18 using all of the time/fare data from the 703 taxi rides listed in Data Set 32 "Taxis" from Appendix B.
+
+## 10-2 Beyond the Basics
+
+33. Least-Squares Property According to the least-squares property, the regression line minimizes the sum of the squares of the residuals. Refer to the jackpot/tickets data in Table 10-1 on page 507 and use the regression equation $\hat{y}=-10.9+0.174 x$ that was found in Examples 1 and 2 of this section.
+
+a. Identify the nine residuals.
+
+b. Find the sum of the squares of the residuals.
+
+c. Show that the equation $\hat{y}=-10.0+0.200 x$ results in a larger sum of squares of residuals.
+<!-- END OF TOPIC -->

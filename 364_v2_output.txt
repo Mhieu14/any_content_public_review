@@ -1,0 +1,418 @@
+# 8.2 Integration by Parts
+
+Integration by parts is an integration method that enables us to find antiderivatives of certain functions for which our previous antidifferentiation methods fail, such as $\ln (x)$ and $\arctan (x)$, as well as antiderivatives of certain products of functions, such as $x^{2} \ln (x)$ and $e^{x} \sin (x)$. It leads to many of the general integral formulas in Appendix I and (next to $u$-substitution) it is one most powerful and frequently used of antidifferentiation techniques.
+
+The Integration by Parts formula for integrals arises from the Product Rule for derivatives. Recall that for functions $u=u(x)$ and $v=v(x)$, the Product Rule says:
+
+$$
+\frac{d}{d x}[u \cdot v]=u \cdot \frac{d v}{d x}+v \cdot \frac{d u}{d x}
+$$
+
+If we integrate both sides of this equation with respect to $x$ we get:
+
+$$
+u \cdot v=\int u \cdot \frac{d v}{d x} d x+\int v \cdot \frac{d u}{d x} d x
+$$
+
+Solving for the first of the two integrals on the right side, yields:
+
+$$
+\int u \cdot \frac{d v}{d x} d x=u \cdot v-\int v \cdot \frac{d u}{d x} d x
+$$
+
+At first, this formula may not appear very promising, as it merely exchanges one integration problem for another. But in certain situations, if we choose $u(x)$ and $v(x)$ carefully, this formula exchanges a difficult integral for an easier one. We can restate the formula in slightly more compact form using differentials.
+
+<!-- START OF TOPIC -->
+## Integration by Parts Formula
+
+If $u, v, u^{\prime}$ and $v^{\prime}$ are continuous functions,
+
+$$
+\text { then } \int u d v=u \cdot v-\int v d u
+$$
+<!-- END OF TOPIC -->
+
+For definite integrals, the Integration By Parts Formula says:
+
+<!-- START OF TOPIC -->
+## Integration by Parts Formula (Definite Integrals)
+
+![](https://cdn.mathpix.com/cropped/2024_07_08_331d05fea813702fecefg-1.jpg?height=453&width=486&top_left_y=1996&top_left_x=234)
+
+If $u, v, u^{\prime}$ and $v^{\prime}$ are continuous functions,
+
+then $\int_{a}^{b} u d v=[u \cdot v]_{a}^{b}-\int_{a}^{b} v d u$
+
+<!-- START OF EXAMPLE -->
+Example 1. Use integration by parts to evaluate $\int x \cos (x) d x$ and $\int_{0}^{\pi} x \cos (x) d x$ (see margin for a graphical interpretation).
+
+Solution. Our first step is to write this integral in the form required by the Integration by Parts formula, $\int u d v$. If we let $u=x$, then we must have $d v=\cos (x) d x$ so that $u d v$ completely represents the integrand $x \cos (x)$. We also need to calculate $d u$ and $v$ :
+
+$$
+u=x \Rightarrow d u=d x \quad \text { and } \quad d v=\cos (x) d x \Rightarrow v=\sin (x)
+$$
+
+Putting these pieces into the Integration by Parts formula, we have:
+
+$$
+\int x \cdot \cos (x) d x=x \cdot \sin (x)-\int \sin (x) d x=x \cdot \sin (x)+\cos (x)+C
+$$
+
+To check this result, differentiate the answer to verify that:
+
+$$
+[x \sin (x)+\cos (x)]^{\prime}=x \cos (x)
+$$
+
+$$
+\begin{aligned}
+\int_{0}^{\pi} x \cdot \cos (x) d x & =[x \cdot \sin (x)+\cos (x)]_{0}^{\pi} \\
+& =[\pi \sin (\pi)+\cos (\pi)]-[0 \cdot \sin (0)+\cos (0)]=-1-1
+\end{aligned}
+$$
+
+or -2 , which appears reasonable based on the area interpretation of this integral in the margin graph on the previous page.
+
+Integration by parts allowed us to exchange the problem of evaluating $\int x \cos (x) d x$ for the much easier problem of evaluating $\int \sin (x) d x$.
+<!-- END OF EXAMPLE -->
+
+Practice 1. Use the Integration by Parts formula on $\int x \cos (x) d x$ with $u=\cos (x)$ and $d v=x d x$. Why does this lead to a poor exchange?
+
+<!-- START OF EXAMPLE -->
+Example 2. Evaluate $\int x e^{3 x} d x$ and $\int_{0}^{1} x e^{3 x} d x$.
+
+Solution. The integrand is a product of two functions, so it is reasonable to use integration by parts to search for an antiderivative. If $u=x \Rightarrow d u=d x$, then $d v=e^{3 x} d x \Rightarrow v=\frac{1}{3} e^{3 x}$. Inserting these expressions into the Integration by Parts formula, we get:
+
+$$
+\begin{aligned}
+\int x e^{3 x} d x & =x \cdot \frac{1}{3} e^{3 x}-\int \frac{1}{3} e^{3 x} d x=\frac{x}{3} e^{3 x}-\frac{1}{9} e^{3 x}+C \\
+\Rightarrow \int_{0}^{1} x e^{3 x} d x & =\left[\frac{x}{3} e^{3 x}-\frac{1}{9} e^{3 x}\right]_{0}^{1}=\left[\frac{1}{3} e^{3}-\frac{1}{9} e^{3}\right]-\left[0-\frac{1}{9}\right]=\frac{2}{9} e^{3}+\frac{1}{9}
+\end{aligned}
+$$
+
+or about 4.57 .
+
+In the previous Example another valid choice would have been $u=e^{3 x}$ and $d v=x d x$, but that choice results in an integral that is more difficult than the original one: $d u=3 e^{3 x} d x$ and $v=\frac{1}{2} x^{2}$, so the Integration by Parts formula yields:
+
+$$
+\int x e^{3 x} d x=e^{3 x} \cdot \frac{1}{2} x^{2}-\int \frac{1}{2} x^{2} \cdot 3 e^{3 x} d x
+$$
+
+which exchanges $\int x e^{3 x} d x$ for the more difficult integral $\int \frac{3}{2} x^{2} e^{3 x} d x$.
+
+If you cannot find a $v$ for your original choice of $d v$, try a different $u$ and $d v$.
+<!-- END OF EXAMPLE -->
+<!-- END OF TOPIC -->
+
+Why are absolute value signs not needed in the last term?
+
+We can now include the antiderivative of $\arctan (x)$ in our list of antiderivatives in Appendix I.
+
+Practice 2. Evaluate $\int x \sin (x) d x$ and $\int x e^{5 x} d x$.
+
+Once you have chosen $u$ and $d v$ to represent the integrand as $u d v$, you need to calculate $d u$ and $v$. The $d u$ calculation is usually easy, but finding $v$ from $d v$ can be difficult for some choices of $d v$. In practice, you need to select $u$ so that the remaining $d v$ is simple enough that you can find $v$, the antiderivative of $d v$.
+
+Example 3. Evaluate $\int 2 x \ln (x) d x$.
+
+Solution. The choice $u=2 x$ seems fine until we get a little further into the process. If $u=2 x$, then $d v=\ln (x) d x$. We now need to find $d u$ and $v$. Computing $d u=2 d x$ is simple, but then we face the difficult problem of finding an antiderivative $v$ for our choice $d v=\ln (x) d x$.
+
+The choice $u=\ln (x)$ results in easier calculations. Let $u=\ln (x)$. Then $d v=2 x d x$, so $d u=\frac{1}{x} d x$ and $v=x^{2}$. Then the Integration by Parts formula gives:
+
+$$
+\int 2 x \ln (x) d x=\ln (x) \cdot x^{2}-\int x^{2} \cdot \frac{1}{x} d x=x^{2} \ln (x)-\int x d x
+$$
+
+so the final result is $x^{2} \ln (x)-\frac{1}{2} x^{2}+C$.
+
+<!-- START OF TOPIC -->
+## Antiderivatives of Inverse Functions
+
+So far we have applied the Integration by Parts method to products of simple functions, but it also enables us - perhaps surprisingly - to find antiderivatives of the inverse trigonometric functions and of the logarithm (the inverse exponential function).
+
+<!-- START OF EXAMPLE -->
+Example 4. Evaluate $\int \arctan (x) d x$.
+
+Solution. Let $u=\arctan (x)$. Then $d v=d x$, so $d u=\frac{1}{1+x^{2}} d x$ and $v=x$. Putting these expressions into the Integration by Parts formula:
+
+$$
+\int \arctan (x) d x=x \arctan (x)-\int x \cdot \frac{1}{1+x^{2}} d x
+$$
+
+We can evaluate the new integral using the substitution $w=1+x^{2} \Rightarrow$ $d w=2 x d x \Rightarrow \frac{1}{2} d w=x d x$ :
+
+$$
+\int x \cdot \frac{1}{1+x^{2}} d x=\int \frac{1}{2} \cdot \frac{1}{w} d w=\frac{1}{2} \ln (|w|)+K=\frac{1}{2} \ln \left(1+x^{2}\right)+K
+$$
+
+Combining these results:
+
+$$
+\int \arctan (x) d x=x \arctan (x)-\frac{1}{2} \ln \left(1+x^{2}\right)+C
+$$
+
+or $x \arctan (x)-\ln \left(\sqrt{1+x^{2}}\right)+C$.
+<!-- END OF EXAMPLE -->
+<!-- END OF TOPIC -->
+
+Practice 3. Evaluate $\int \ln (x) d x$ and $\int_{1}^{e} \ln (x) d x$.
+
+Note the following about the Integration by Parts formula:
+
+- Once you choose $u$, then $d v$ is completely determined.
+
+- Because you need to find an antiderivative of $d v$ to get $v$, pick $u$ and $d v$ with this in mind.
+
+- Integration by parts allows you to trade one integral for another. If the new integral is more difficult than the original integral, then you have made a poor choice of $u$ and $d v$. Try a different choice for $u$ and $d v$ (or try a different technique).
+
+- To evaluate the new integral $\int v d u$ you may need to use substitution, integration by parts again, or some other technique (such as the ones discussed later in this chapter).
+
+<!-- START OF TOPIC -->
+## General Patterns
+
+Sometimes a single application of integration by parts yields a formula that allows us to integrate an entire family of functions.
+
+<!-- START OF EXAMPLE -->
+Example 5. Evaluate $\int x^{p} \ln (x) d x$ for any number $p \neq-1$.
+
+Solution. Set $u=\ln (x)$ so $d v=x^{p} d x, d u=\frac{1}{x} d x$ and $v=\frac{1}{p+1} x^{p+1}$. Putting all of this into the Integration by Parts formula:
+
+$$
+\int x^{p} \ln (x) d x=\frac{1}{p+1} x^{p+1} \cdot \ln (x)-\int \frac{1}{p+1} x^{p+1} \cdot \frac{1}{x} d x
+$$
+
+This new integral becomes:
+
+$$
+\frac{1}{p+1} \int x^{p} d x=\frac{1}{p+1} \cdot \frac{1}{p+1} x^{p+1}+K=\frac{x^{p+1}}{(p+1)^{2}}+K
+$$
+
+Combining these results yields:
+
+$$
+\frac{x^{p+1}}{p+1} \ln (x)-\frac{x^{p+1}}{(p+1)^{2}}+C=\frac{x^{p+1}}{p+1}\left[\ln (x)-\frac{1}{p+1}\right]+C
+$$
+
+for any number $p$ as long as $p \neq-1$.
+<!-- END OF EXAMPLE -->
+<!-- END OF TOPIC -->
+
+What happens when $p=-1$ ? Can you evaluate that integral?
+
+Practice 4. Use Example 5 to evaluate $\int x^{2} \ln (x) d x$ and $\int \ln (x) d x$.
+
+<!-- START OF TOPIC -->
+## Reduction Formulas
+
+Sometimes the result of an integration-by-parts procedure still contains an integral, but a simpler one with a smaller exponent. In these situations we can reuse the resulting reduction formula until the remaining
+
+$d v=$ rest of the integrand integral is simple enough to integrate completely.
+
+<!-- START OF EXAMPLE -->
+Example 6. Evaluate $\int x^{n} e^{x} d x$ and use the result to evaluate $\int x^{2} e^{x} d x$.
+
+Solution. Set $u=x^{n}$ so $d v=e^{x} d x, d u=n x^{n-1} d x$ and $v=e^{x}$. The Integration by Parts formula gives
+
+$$
+\int x^{n} e^{x} d x=x^{n} e^{x}-n \int x^{n-1} e^{x} d x
+$$
+
+which is a reduction formula because we have reduced the power of $x$ by 1 , trading $\int x^{n} e^{x} d x$ for the "reduced" integral $\int x^{n-1} e^{x} d x$.
+
+Because $\int x^{2} e^{x} d x$ matches the general pattern of $\int x^{n} e^{x} d x$ with $n=2$, we know that:
+
+$$
+\int x^{2} e^{x} d x=x^{2} e^{x}-2 \int x^{1} e^{x} d x
+$$
+
+The new integral also matches the pattern in the reduction formula (with $n=1$ this time) so we know that:
+
+$$
+\int x^{1} e^{x} d x=x^{1} e^{x}-1 \cdot \int x^{0} e^{x} d x
+$$
+
+This last integral is just $\int e^{x} d x=e^{x}+K$, so combining our results:
+
+$$
+\begin{aligned}
+\int x^{2} e^{x} d x & =x^{2} e^{x}-2 \int x^{1} e^{x} d x=x^{2} e^{x}-2\left[x e^{x}-\int e^{x} d x\right] \\
+& =x^{2} e^{x}-2 x e^{x}+2 e^{x}+C
+\end{aligned}
+$$
+
+We can also write the answer as $e^{x}\left[x^{2}-2 x+2\right]+C$.
+<!-- END OF EXAMPLE -->
+<!-- END OF TOPIC -->
+
+Practice 5. Develop the reduction formula:
+
+$$
+\int x^{n} \sin (x) d x=-x^{n} \cos (x)+n \int x^{n-1} \cos (x) d x
+$$
+
+using integration by parts.
+
+<!-- START OF TOPIC -->
+## The Reappearing Integral
+
+Sometimes the integral we are trying to evaluate shows up on both sides of the equation during our calculations in such a way that we can solve for the desired integral algebraically.
+
+<!-- START OF EXAMPLE -->
+Example 7. Evaluate $\int e^{x} \cos (x) d x$.
+
+Solution. Let $u=e^{x}$, so $d v=\cos (x) d x, d u=e^{x} d x$ and $v=\sin (x)$ :
+
+$$
+\int e^{x} \cos (x) d x=e^{x} \sin (x)-\int e^{x} \sin (x) d x
+$$
+
+The new integral does not look any easier than the original one, but it doesn't look any worse, so let's try to evaluate the new integral using
+
+integration by parts again. To evaluate $\int e^{x} \sin (x) d x$, let $u=e^{x}$ and $d v=\sin (x) d x$ so that $d u=e^{x} d x$ and $v=-\cos (x)$, giving us:
+
+$$
+\int e^{x} \sin (x) d x=-e^{x} \cos (x)+\int e^{x} \cos (x) d x
+$$
+
+Putting this result back into the original problem, we get:
+
+$$
+\begin{aligned}
+\int e^{x} \cos (x) d x & =e^{x} \sin (x)-\int e^{x} \sin (x) d x \\
+& =e^{x} \sin (x)-\left[-e^{x} \cos (x)+\int e^{x} \cos (x) d x\right] \\
+& =e^{x} \sin (x)+e^{x} \cos (x)-\int e^{x} \cos (x) d x
+\end{aligned}
+$$
+
+Note that $\int e^{x} \cos (x) d x$ appears on both sides of this last equation, so we can solve for that expression algebraically:
+
+$$
+2 \int e^{x} \cos (x) d x=e^{x} \sin (x)+e^{x} \cos (x)+K
+$$
+
+and, finally, divide both sides by 2 to get:
+
+$$
+\int e^{x} \cos (x) d x=\frac{1}{2}\left[e^{x} \sin (x)+e^{x} \cos (x)\right]+C
+$$
+
+which we can also write as $\frac{1}{2} e^{x}[\sin (x)+\cos (x)]+C$.
+<!-- END OF EXAMPLE -->
+<!-- END OF TOPIC -->
+
+Practice 6. Evaluate $\int e^{x} \sin (x) d x$.
+
+<!-- START OF TOPIC -->
+## A Useful Shortcut
+
+Repeated application of integration by parts, as in Example 6, can quickly become tedious, even with the aid of a reduction formula. For integrals of the form $\int x^{n} \cdot f(x) d x$ where $n$ is an integer, it is often possible to arrange the integration-by-parts ingredients in a table to allow much speedier computation.
+
+<!-- START OF EXAMPLE -->
+Example 8. Evaluate $\int x^{2} e^{3 x} d x$.
+
+Solution. Make a table (see margin) with two columns. In the second entry of the left column, start with $u=x^{2}$ and below it list the successive derivatives of $x^{2}: 2 x, 2$ and 0 (you can stop when you get to $0)$. In the right column start with $v^{\prime}=e^{3 x}$ and below it list successive antiderivatives of $e^{3 x}: \frac{1}{3} e^{3 x}, \frac{1}{9} e^{3 x}$ and $\frac{1}{27} e^{3 x}$. Now multiply the functions in each row and add the results, alternating signs:
+
+$$
+x^{2} \cdot \frac{1}{3} e^{3 x}-2 x \cdot \frac{1}{9} e^{3 x}+2 \cdot \frac{1}{27} e^{3 x}-0 \cdot \frac{1}{81} e^{3 x}
+$$
+
+We can stop here, because all of the remaining terms will be 0 . Now add a constant and you have the result: $\frac{1}{3} x^{2} e^{3 x}-\frac{2}{9} x e^{3 x}+\frac{2}{27} e^{3 x}+C$.
+
+We need an arbitrary constant on the right side of this equation because the left side is an indefinite integral.
+
+$C=\frac{K}{2}$
+
+Apply this new technique to the second integral in Example 6 to verify that you get the same result with the new method. Which method is faster?
+
+This shortcut method only works when the chosen $u$ in the initial integration-by-parts setup is $x^{n}$ (so that taking several derivatives results in 0 ) and when the chosen $d v$ is a function like $e^{a x}$ or $\sin (b x)$ so that repeated antidifferentiation is fairly easy. But when this shortcut does apply, it can save you a great deal of time.
+<!-- END OF EXAMPLE -->
+<!-- END OF TOPIC -->
+
+Practice 7. Evaluate $\int x^{5} \cos (x) d x$ and $\int x^{3} e^{-2 x} d x$.
+
+### 8.2 Problems
+
+Problems 1-6 list one part ( $u$ or $d v$ ) needed for integration by parts. Find the other part ( $d v$ or $u$ ), calculate $d u$ and $v$, and apply the Integration by Parts formula to evaluate the integral.
+
+1. $\int 12 x \ln (x) d x, \quad u=\ln (x)$
+
+2. $\int x e^{-x} d x, \quad u=x$
+
+3. $\int x^{4} \ln (x) d x, \quad d v=x^{4} d x$
+
+4. $\int x \sec ^{2}(3 x) d x, \quad u=x$
+
+5. $\int x \arctan (x) d x, \quad d v=x d x$
+
+6. $\int x(5 x+1)^{19} d x, \quad u=x$
+
+In Problems 7-24, evaluate the integral.
+
+7. $\int_{0}^{1} \frac{x}{e^{3 x}} d x$
+
+8. $\int_{0}^{1} 10 x e^{3 x} d x$
+
+9. $\int x \sec (x) \tan (x) d x$
+
+10. $\int_{0}^{\pi} 5 x \sin (2 x) d x$
+
+11. $\int_{\frac{\pi}{3}}^{\frac{\pi}{2}} 7 x \cos (3 x) d x$
+
+12. $\int 6 x \sin \left(x^{2}+1\right) d x$
+
+13. $\int 12 x \cos \left(3 x^{2}\right) d x$
+
+14. $\int x^{2} \cos (x) d x$
+
+15. $\int_{1}^{3} \ln (2 x+5) d x$
+
+16. $\int x^{3} \ln (5 x) d x$
+
+17. $\int_{1}^{e}(\ln (x))^{2} d x$
+
+18. $\int_{1}^{e} \sqrt{x} \ln (x) d x$
+
+19. $\int \arcsin (x) d x$
+
+20. $\int x^{2} e^{5 x} d x$
+
+21. $\int x \arctan (3 x) d x$
+
+22. $\int x \ln (x+1) d x$
+
+23. $\int_{1}^{2} \frac{\ln (x)}{x} d x$
+
+24. $\int_{1}^{2} \frac{\ln (x)}{x^{2}} d x$
+
+25. Write $\sin ^{n}(x)=\sin ^{n-1}(x) \cdot \sin (x)$ and use integration by parts to obtain the following reduction formula for $\int \sin ^{n}(x) d x$ :
+
+$$
+\frac{1}{n}\left[-\sin ^{n-1}(x) \cos (x)+(n-1) \int \sin ^{n-2}(x) d x\right]
+$$
+
+26. Write $\cos ^{n}(x)=\cos ^{n-1}(x) \cdot \cos (x)$ and use integration by parts to obtain the following reduction formula for $\int \cos ^{n}(x) d x$ :
+
+$$
+\frac{1}{n}\left[\cos ^{n-1}(x) \sin (x)+(n-1) \int \cos ^{n-2}(x) d x\right]
+$$
+
+27. Use integration by parts to obtain a reduction formula for $\int \sec ^{n}(x) d x$.
+
+28. Use integration by parts to obtain a reduction formula for $\int \tan ^{n}(x) d x$.
+
+In Problems 29-40, use a result from Problems 25-28 to evaluate the integral.
+
+29. $\int \sin ^{3}(x) d x \quad$ 30. $\int \sin ^{4}(x) d x$
+
+30. $\int \sin ^{5}(x) d x$
+
+31. $\int \cos ^{3}(x) d x$
+
+32. $\int \cos ^{4}(x) d x$
+
+33. $\int \cos ^{5}(x) d x$
+
+34. $\int \sec ^{3}(x) d x \quad$ 36. $\int \sec ^{4}(x) d x$
+
+35. $\int \sec ^{5}(x) d x \quad$ 38. $\int \sin ^{3}(5 x-2) d x$
+
+36. $\int \cos ^{3}(2 x+3) d x$ 40. $\int \sec ^{3}(7 x-1) d x$

@@ -1,0 +1,361 @@
+# 8.5 Integrals of Trigonometric Functions
+
+In the previous section, we learned how to turn integrands involving various radical and rational expressions containing the variable $x$ into functions consisting of products of powers of trigonometric functions of $\theta$. An overwhelming number of combinations of trigonometric functions can appear in these integrals, but fortunately most fall into a few general patterns - and most can be integrated using reduction formulas and integral tables. This section examines some of these patterns and illustrates how to obtain some of their integrals.
+
+<!-- START OF TOPIC -->
+## Products of $\sin (a x)$ and $\cos (b x)$
+
+We can handle the integrals $\int \sin (a x) \cdot \sin (b x) d x, \int \cos (a x) \cdot \cos (b x) d x$ and $\int \sin (a x) \cdot \cos (b x) d x$ by referring to the trigonometric identities for sums and differences of sine and cosine:
+
+$$
+\begin{aligned}
+& \sin (A+B)=\sin (A) \cos (B)+\cos (A) \sin (B) \\
+& \sin (A-B)=\sin (A) \cos (B)-\cos (A) \sin (B) \\
+& \cos (A+B)=\cos (A) \cos (B)-\sin (A) \sin (B) \\
+& \cos (A-B)=\cos (A) \cos (B)+\sin (A) \sin (B)
+\end{aligned}
+$$
+
+By adding or subtracting pairs of identities, we can write products such as $\sin (a x) \cos (b x)$ as a sum or difference of single sines or cosines. For example, by adding the first two identities, we get:
+
+$$
+\begin{aligned}
+2 \sin (A) \cos (B) & =\sin (A+B)+\sin (A-B) \\
+\Rightarrow \quad \sin (A) \cos (B) & =\frac{1}{2}[\sin (A+B)+\sin (A-B)]
+\end{aligned}
+$$
+
+Using this last identity (for $a \neq b$ ):
+
+$$
+\begin{aligned}
+\int \sin (a x) \cos (b x) d x & =\int \frac{1}{2}[\sin ((a+b) x)+\sin ((a-b) x)] d x \\
+& =\frac{1}{2}\left[-\frac{\cos ((a+b) x)}{a+b}-\frac{\cos ((a-b) x)}{a-b}\right]+C
+\end{aligned}
+$$
+
+The other integrals of products of sine and cosine follow similarly.
+
+$$
+\begin{aligned}
+& \text { If } a \neq b \text {, then: } \\
+& \qquad \begin{array}{l}
+\sin (a x) \sin (b x) d x=\frac{1}{2}\left[\frac{\sin ((a-b) x)}{a-b}-\frac{\sin ((a+b) x)}{a+b}\right]+C \\
+\int \cos (a x) \cos (b x) d x=\frac{1}{2}\left[\frac{\sin ((a-b) x)}{a-b}+\frac{\sin ((a+b) x)}{a+b}\right]+C \\
+\int \sin (a x) \cos (b x) d x=-\frac{1}{2}\left[\frac{\cos ((a-b) x)}{a-b}+\frac{\cos ((a+b) x)}{a+b}\right]+C
+\end{array}
+\end{aligned}
+$$
+
+Integrals of functions of this type also arise in other mathematical applications such as Fourier series.
+
+If $a=b$, we have already developed the relevant integral patterns:
+
+$$
+\begin{gathered}
+\int \sin ^{2}(a x) d x=\frac{x}{2}-\frac{\sin (2 a x)}{4 a}+C=\frac{x}{2}-\frac{\sin (a x) \cdot \cos (a x)}{2 a}+C \\
+\int \cos ^{2}(a x) d x=\frac{x}{2}+\frac{\sin (2 a x)}{4 a}+C=\frac{x}{2}+\frac{\sin (a x) \cdot \cos (a x)}{2 a}+C \\
+\int \sin (a x) \cos (a x) d x=\frac{\sin ^{2}(a x)}{2 a}+C=\frac{1-\cos (2 a x)}{4 a}+C
+\end{gathered}
+$$
+
+The first and second of these integral formulas follow from the identities $\sin ^{2}(a x)=\frac{1}{2}-\frac{1}{2} \cos ^{2}(2 a x)$ and $\cos ^{2}(a x)=\frac{1}{2}+\frac{1}{2} \cos ^{2}(2 a x)$. The third can be obtained by changing the variable to $u=\sin (a x)$.
+<!-- END OF TOPIC -->
+
+<!-- START OF TOPIC -->
+Powers of Sine and Cosine Alone: $\int \sin ^{n}(x) d x$ or $\int \cos ^{n}(x) d x$
+
+We can find antiderviatives of $\sin ^{n}(x)$ or $\cos ^{n}(x)$ using integration by parts or reduction formulas that we obtained using integration by parts. For small values of $n$ we can also find the antiderivatives directly.
+
+For even powers of sine or cosine, we can reduce the exponent by repeatedly applying the identities $\sin ^{2}(\theta)=\frac{1}{2}-\frac{1}{2} \cos (2 \theta)$ and $\cos ^{2}(\theta)=\frac{1}{2}+\frac{1}{2} \cos (2 \theta)$.
+
+<!-- START OF EXAMPLE -->
+Example 1. Evaluate $\int \sin ^{4}(x) d x$.
+
+Solution. Applying the identity for $\sin ^{2}(\theta)$, we can write $\sin ^{4}(x)$ as:
+
+$$
+\left[\sin ^{2}(x)\right]^{2}=\left[\frac{1}{2}-\frac{1}{2} \cos (2 x)\right]^{2}=\frac{1}{4}\left[1-2 \cos (2 x)+\cos ^{2}(2 x)\right]
+$$
+
+and integrating gives:
+
+$$
+\begin{aligned}
+\int \sin ^{4}(x) d x & =\frac{1}{4} \int\left[1-2 \cos (2 x)+\cos ^{2}(2 x)\right] d x \\
+& =\frac{1}{4}\left[x-\sin (2 x)+\frac{x}{2}+\frac{1}{8} \sin (4 x)\right]+C \\
+& =\frac{3}{8} x-\frac{1}{4} \sin (2 x)+\frac{1}{32} \sin (4 x)+C
+\end{aligned}
+$$
+
+using the formula for $\int \cos ^{2}(2 u) d u$.
+<!-- END OF EXAMPLE -->
+
+Practice 1. Evaluate $\int \cos ^{4}(x) d x$.
+
+For odd powers of sine or cosine we can split off one factor of sine or cosine and rewrite the remaining even power using the identities $\sin ^{2}(\theta)=1-\cos ^{2}(\theta)$ or $\cos ^{2}(\theta)=1-\sin ^{2}(\theta)$, then integrate by changing the variable.
+
+<!-- START OF EXAMPLE -->
+Example 2. Evaluate $\int \sin ^{5}(x) d x$.
+
+Solution. First split off one power of sine, writing:
+
+$\sin ^{5}(x)=\sin ^{4}(x) \cdot \sin (x)=\left[\sin ^{2}(x)\right]^{2} \cdot \sin (x)=\left[1-\cos ^{2}(x)\right]^{2} \sin (x)$
+
+and then integrate, using the substitution $u=\cos (x) \Rightarrow d u=-\sin (x) d x$ :
+
+$$
+\begin{aligned}
+\int \sin ^{5}(x) d x & =\int\left[1-\cos ^{2}(x)\right]^{2} \sin (x) d x=-\int\left[1-u^{2}\right]^{2} d u \\
+& =-\int\left[1-2 u^{2}+u^{4}\right] d u=-\left[u-\frac{2}{3} u^{3}+\frac{1}{5} u^{5}\right]+C \\
+& =-\cos (x)+\frac{2}{3} \cos ^{3}(x)-\frac{1}{5} \cos ^{5}(x)+C
+\end{aligned}
+$$
+
+The reduction formula obtained in Problem 25 of Section 8.2 yields:
+
+$$
+\int \sin ^{5}(x) d x=\frac{1}{5} \sin ^{4}(x) \cos (x)-\frac{4}{15} \sin ^{2}(x) \cos (x)-\frac{8}{15} \cos (x)+K
+$$
+<!-- END OF EXAMPLE -->
+
+which looks nothing like the result above, but these functions (aside from the different constants of integration) are in fact equal.
+
+You should be able to see this by graphing the two functions, and prove this using
+
+Practice 2. Evaluate $\int \cos ^{5}(x) d x$ trig identities.
+<!-- END OF TOPIC -->
+
+<!-- START OF TOPIC -->
+Patterns for $\int \sin ^{m}(x) \cos ^{n}(x) d x$
+
+For integrands of the form $\sin ^{m}(x) \cos ^{n}(x)$, if the exponent of sine is odd, you can split off one factor of $\sin (x)$ and use the identity $\sin ^{2}(x)=1-\cos ^{2}(x)$ to rewrite the remaining even power of sine in terms of cosine, then change the variable using $u=\cos (x)$.
+
+<!-- START OF EXAMPLE -->
+Example 3. Evaluate $\int \sin ^{3}(x) \cos ^{6}(x) d x$.
+
+Solution. First split off a power of sine, writing:
+
+$\sin ^{3}(x) \cos ^{6}(x)=\sin (x) \sin ^{2}(x) \cos ^{6}(x)=\sin (x)\left[1-\cos ^{2}(x)\right] \cos ^{6}(x)$
+
+and then use the substitution $u=\cos (x) \Rightarrow d u=-\sin (x) d x$
+
+$$
+\begin{aligned}
+\int \sin ^{3}(x) \cos ^{6}(x) & =\int \sin (x)\left[1-\cos ^{2}(x)\right] \cos ^{6}(x) d x \\
+& =\int-\left[1-u^{2}\right] u^{6} d u=\int\left[u^{8}-u^{6}\right] d u \\
+& =\frac{1}{9} u^{9}-\frac{1}{7} u^{7}+C=\frac{1}{9} \cos ^{9}(x)-\frac{1}{7} \cos ^{7}(x)+C
+\end{aligned}
+$$
+
+You can verify this is the correct antiderivative by differentiating the result and comparing it to the original integrand.
+<!-- END OF EXAMPLE -->
+
+Practice 3. Evaluate $\int \sin ^{3}(x) \cos ^{4}(x) d x$.
+
+If the exponent of cosine is odd, split off one $\cos (x)$ and use the
+
+See Problems 27 and 28 in Section 8.2. identity $\cos ^{2}(x)=1-\sin ^{2}(x)$ to rewrite the remaining even power of cosine in terms of sine. Then use the change of variable $u=\sin (x)$.
+
+If both exponents are even, use the identities $\sin ^{2}(x)=\frac{1}{2}-\frac{1}{2} \cos (2 x)$ and $\cos ^{2}(x)=\frac{1}{2}+\frac{1}{2} \cos (2 x)$ to rewrite the integral in terms of powers of $\cos (2 x)$, then proceed by integrating even powers of cosine.
+<!-- END OF TOPIC -->
+
+<!-- START OF TOPIC -->
+## Powers of Secant or Tangent Alone
+
+You integrate any power of $\sec (x)$ and $\tan (x)$ by knowing that:
+
+$$
+\begin{aligned}
+\int \sec (x) d x & =\ln (|\sec (x)+\tan (x)|)+C \\
+\text { and } \quad \int \tan (x) d x & =\ln (|\sec (x)|)+C
+\end{aligned}
+$$
+
+and using the reduction formulas:
+
+$$
+\begin{aligned}
+\int \sec ^{n}(x) d x & =\frac{1}{n-1} \sec ^{n-2}(x) \cdot \tan (x)+\frac{n-2}{n-1} \int \sec ^{n-2}(x) d x \\
+\text { and } \int \tan ^{n}(x) d x & =\frac{1}{n-1} \tan ^{n-1}(x)-\int \tan ^{n-2}(x) d x
+\end{aligned}
+$$
+
+<!-- START OF EXAMPLE -->
+Example 4. Evaluate $\int \sec ^{3}(x) d x$.
+
+Solution. Using the first reduction formula with $n=3$ :
+
+$$
+\begin{aligned}
+\int \sec ^{3}(x) d x & =\frac{1}{2} \sec (x) \cdot \tan (x)+\frac{1}{2} \int \sec (x) d x \\
+& =\frac{1}{2} \sec (x) \cdot \tan (x)+\frac{1}{2} \ln (|\sec (x)+\tan (x)|)+C
+\end{aligned}
+$$
+<!-- END OF EXAMPLE -->
+
+You could also write $\sec ^{3}(x)=\sec (x) \cdot \sec ^{2}(x)$ and work out this integral directly using integration by parts.
+
+Practice 4. Evaluate $\int \tan ^{3}(x) d x$ and $\int \sec ^{5}(x) d x$.
+<!-- END OF TOPIC -->
+
+<!-- START OF TOPIC -->
+Patterns for $\int \sec ^{m}(x) \tan ^{n}(x) d x$
+
+The patterns for evaluating $\int \sec ^{m}(x) \tan ^{n}(x) d x$ resemble those for $\int \sin ^{m}(x) \cos ^{n}(x) d x$ : we treat the even and odd powers differently and we use the identities $\tan ^{2}(\theta)=\sec ^{2}(\theta)-1$ and $\sec ^{2}(\theta)=\tan ^{2}(\theta)+1$.
+
+If the exponent of secant is even, factor off $\sec ^{2}(x)$, replace the other even powers (if any) of secant using $\sec ^{2}(x)=\tan ^{2}(x)+1$, and then make the change of variable $u=\tan (x) \Rightarrow d u=\sec ^{2}(x) d x$.
+
+If the exponent of tangent is odd, factor off $\sec (x) \tan (x)$, replace any remaining even powers of tangent using $\tan ^{2}(x)=\sec ^{2}(x)-1$, and then make the change of variable $u=\sec (x) \Rightarrow d u=\sec (x) \tan (x) d x$.
+
+If the exponent of secant is odd and the exponent of tangent is even, replace the even powers of tangent using $\tan ^{2}(x)=\sec ^{2}(x)-1$. Then the integral contains only powers of secant, and you can use the strategy for integrating powers of secant alone.
+
+<!-- START OF EXAMPLE -->
+Example 5. Evaluate $\int \sec (x) \tan ^{2}(x) d x$.
+
+Solution. Because the exponent of secant is odd and and the exponent of tangent is even, we can use the last method mentioned above and replace $\tan ^{2}(x)$ with $\sec ^{2}(x)-1$. Then:
+
+$$
+\begin{aligned}
+\int \sec (x) \tan ^{2}(x) d x & =\int \sec (x)\left[\sec ^{2}(x)-1\right] d x=\int \sec ^{3}(x) d x-\int \sec (x) d x \\
+& =\frac{1}{2} \sec (x) \cdot \tan (x)+\frac{1}{2} \ln (|\sec (x)+\tan (x)|)-\ln (|\sec (x)+\tan (x)|)+C \\
+& =\frac{1}{2} \sec (x) \cdot \tan (x)-\frac{1}{2} \ln (|\sec (x)+\tan (x)|)+C
+\end{aligned}
+$$
+
+where we used the result of Example 4 for $\int \sec ^{3}(x) d x$.
+<!-- END OF EXAMPLE -->
+
+Practice 5. Evaluate $\int \sec ^{4}(x) \tan ^{2}(x) d x$.
+<!-- END OF TOPIC -->
+
+<!-- START OF TOPIC -->
+## Wrap-Up
+
+Even if you use integral tables (or computers) for most of your future work, it is important to realize that most of the integral patterns for products of powers of trigonometric functions can be obtained using some basic trigonometric identities and the techniques we have discussed in this and earlier sections.
+<!-- END OF TOPIC -->
+
+### 8.5 Problems
+
+In Problems 1-36, evaluate the integral. (More than one method works for some of the integrals.)
+
+1. $\int \sin ^{2}(3 x) d x$
+
+2. $\int \cos ^{2}(5 x) d x$
+
+3. $\int e^{x} \sin \left(e^{x}\right) \cos \left(e^{x}\right) d x$
+
+4. $\int \frac{1}{x} \sin ^{2}(\ln (x)) d x$
+
+5. $\int_{0}^{\pi} \sin ^{4}(3 x) d x$
+
+6. $\int_{0}^{\pi} \cos ^{4}(5 x) d x$
+
+7. $\int_{0}^{\pi} \cos ^{3}(5 x) d x$
+
+8. $\int_{0}^{\pi} \sin ^{3}(7 x) d x$
+
+9. $\int \sin (7 x) \cos (7 x) d x$
+
+10. $\int \sin (7 x) \cos ^{2}(7 x) d x$
+
+11. $\int \sin (7 x) \cos ^{3}(7 x) d x$ 12. $\int \sin ^{2}(\pi x) \cos (\pi x) d x$
+
+12. $\int \sin ^{5}(x) \cos ^{2}(x) d x \quad$ 16. $\int \sin ^{2}(x) \cos ^{5}(x) d x$
+
+13. $\int \sec ^{4}(4 x) d x$ 18. $\int \tan ^{4}(4 x) d x$
+
+14. $\int \tan ^{5}(4 x) d x \quad$ 20. $\int \sec ^{3}(4 x) d x$
+
+15. $\int \sec ^{2}(5 x) \tan (5 x) d x$ 22. $\int \sec ^{2}(5 x) \tan ^{2}(5 x) d x$
+
+16. $\int \sec ^{3}(5 x) \tan (5 x) d x$ 24. $\int \sec ^{3}(5 x) \tan ^{2}(5 x) d x$
+
+17. $\int \sin ^{2}(3 x) \cos ^{2}(3 x) d x$ 14. $\int \sin ^{2}(\pi x) \cos ^{3}(\pi x) d x$
+
+18. $\int \sec ^{4}(\theta) \tan (\theta) d \theta$
+
+19. $\int \sec ^{4}(\theta) \tan ^{2}(\theta) d \theta$
+
+20. $\int \sec ^{4}(\theta) \tan ^{4}(\theta) d \theta$
+
+21. $\int \sec ^{4}(\theta) \tan ^{2015}(\theta) d \theta$
+
+22. $\int \frac{\sin ^{2}(x)}{\cos ^{2}(x)} d x$
+
+23. $\int \frac{1}{\cos ^{2}(x)} d x$
+
+24. $\int \cos ^{4}(\theta) \tan ^{4}(\theta) d \theta$
+
+25. $\int \cos ^{4}(\theta) \tan ^{2}(\theta) d \theta$
+
+26. $\int \sin (x) \cos (3 x) d x$
+
+27. $\int \sin (7 x) \cos (3 x) d x$
+
+28. $\int \sin (x) \sin (3 x) d x$
+
+29. $\int \cos (7 x) \cos (3 x) d x$
+
+30. Show that if $n$ is a positive, odd integer, then:
+
+$$
+\int_{0}^{2 \pi} \sin ^{n}(x) d x=0
+$$
+
+38. Using integral tables or reduction formulas, it is straightforward to show that:
+
+$$
+\begin{aligned}
+\int_{0}^{2 \pi} \sin ^{2}(x) d x & =\pi \\
+\int_{0}^{2 \pi} \sin ^{4}(x) d x & =\frac{3}{4} \pi \\
+\int_{0}^{2 \pi} \sin ^{6}(x) d x & =\frac{3}{4} \cdot \frac{5}{6} \pi
+\end{aligned}
+$$
+
+Evaluate $\int_{0}^{2 \pi} \sin ^{8}(x) d x$, then make a prediction about the value of $\int_{0}^{2 \pi} \sin ^{10}(x) d x$ and evaluate that integral.
+
+The definite integrals of various combinations of sine and cosine on the interval $[0,2 \pi]$ exhibit a number of interesting patterns. For now, these are simply curiosities and a source of additional practice problems, but the patterns are very important as the foundation for an applied topic, Fourier series, which you may encounter in more advanced courses. Problems 39-41 ask you to show that the definite integral on $[0,2 \pi]$ of $\sin (m x)$ multiplied by almost any other $\sin (n x)$ or $\cos (n x)$ is 0 . The only nonzero value comes when $\sin (m x)$ is multiplied by itself.
+
+39. Show that if $m$ and $n$ are integers with $m \neq n$, then:
+
+$$
+\int_{0}^{2 \pi} \sin (m x) \cdot \sin (n x) d x=0
+$$
+
+40. Show that if $m$ and $n$ are integers, then:
+
+$$
+\int_{0}^{2 \pi} \sin (m x) \cdot \cos (n x) d x=0
+$$
+
+(Consider $m=n$ and $m \neq n$ separately.)
+
+41. Show that if $m \neq 0$ is an integer, then:
+
+$$
+\int_{0}^{2 \pi} \sin (m x) \cdot \sin (m x) d x=\pi
+$$
+
+Problems 42-47, concern the following function $P(x)$, a trigonometric polynomial:
+
+$$
+\begin{aligned}
+P(x)=5 \sin (x) & +7 \cos (x)-4 \sin (2 x) \\
+& +8 \cos (2 x)-2 \sin (3 x)
+\end{aligned}
+$$
+
+In Problems 42-45, use the results of Problems 39-41 to quickly evaluate each integral.
+
+42. $a_{1}=\frac{1}{\pi} \int_{0}^{2 \pi} \sin (1 x) \cdot P(x) d x$
+
+43. $a_{2}=\frac{1}{\pi} \int_{0}^{2 \pi} \sin (2 x) \cdot P(x) d x$
+
+44. $a_{3}=\frac{1}{\pi} \int_{0}^{2 \pi} \sin (3 x) \cdot P(x) d x$
+
+45. $a_{4}=\frac{1}{\pi} \int_{0}^{2 \pi} \sin (4 x) \cdot P(x) d x$
+
+46. Describe how the values of $a_{k}$ in Problems 42-45 are related to the coefficients of $P(x)$, then make up your own trigonometric polynomial $Q(x)$ and see if your description holds for the $a_{k}$ values calculated from $Q(x)$.
+
+47. Just by knowing the $a_{k}$ values we can "rebuild" part of $P(x)$. Find a similar method for getting the coefficients of the cosine terms of $P(x): b_{k}=$ ??

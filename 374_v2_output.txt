@@ -1,0 +1,121 @@
+<!-- START OF TOPIC -->
+# One-Sided Limits
+
+<!-- START OF EXAMPLE -->
+## Example 6
+
+The Heaviside function $H$ is defined by
+
+$$
+H(t)= \begin{cases}0 & \text { if } t<0 \\ 1 & \text { if } t \geqslant 0\end{cases}
+$$
+
+[This function is named after the electrical engineer Oliver Heaviside (1850-1925) and can be used to describe an electric current that is switched on at time $t=0$.] Its graph is shown in Figure 8.
+
+Figure 8
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_9ac52d66350ae1bb15aag-1.jpg?height=309&width=615&top_left_y=1545&top_left_x=755)
+
+Details
+
+The Heaviside function
+
+As $t$ approaches 0 from the left, $H(t)$ approaches 0 . As $t$ approaches 0 from the right, $H(t)$ approaches 1 . There is no single number that $H(t)$ approaches as $t$ approaches 0 . Therefore $\lim _{t \rightarrow 0} H(t)$ does not exist.
+
+We noticed in Example 6 that $H(t)$ approaches 0 as $t$ approaches 0 from the left and $H(t)$ approaches 1 as $t$ approaches 0 from the right. We indicate this situation symbolically by writing
+
+$$
+\lim _{t \rightarrow 0^{-}} H(t)=0
+$$
+
+and
+
+$$
+\lim _{t \rightarrow 0^{+}} H(t)=1
+$$
+<!-- END OF EXAMPLE -->
+
+The notation $t \rightarrow 0^{-}$indicates that we consider only values of $t$ that are less than 0 . Likewise, $t \rightarrow 0^{+}$indicates that we consider only values of $t$ that are greater than 0 .
+
+## 2 Definition of One-Sided Limits
+
+We write
+
+$$
+\lim _{x \rightarrow a^{-}} f(x)=L
+$$
+
+and say the left-hand limit of $\boldsymbol{f}(\boldsymbol{x})$ as $\boldsymbol{x}$ approaches $\boldsymbol{a}$ [or the limit of $\boldsymbol{f}(\boldsymbol{x})$ as $\boldsymbol{x}$ approaches $\boldsymbol{a}$ from the left] is equal to $L$ if we can make the values of $f(x)$ arbitrarily close to $L$ by taking $x$ to be sufficiently close to $a$ with $x$ less than $a$.
+
+Notice that Definition 2 differs from Definition 1 only in that we require $x$ to be less than $a$. Similarly, if we require that $x$ be greater than $a$, we get "the right-hand limit of $\boldsymbol{f}(\boldsymbol{x})$ as $\boldsymbol{x}$ approaches $\boldsymbol{a}$ is equal to $L$ " and we write
+
+$$
+\lim _{x \rightarrow a^{+}} f(x)=L
+$$
+
+Thus the notation $x \rightarrow a^{+}$means that we consider only $x$ greater than $a$. These definitions are illustrated in Figure 9.
+
+## Figure 9
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_9ac52d66350ae1bb15aag-3.jpg?height=382&width=647&top_left_y=655&top_left_x=346)
+
+(a) $\lim _{x \rightarrow a^{-}} f(x)=L$
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_9ac52d66350ae1bb15aag-3.jpg?height=382&width=634&top_left_y=655&top_left_x=1125)
+
+(b) $\lim _{x \rightarrow a^{+}} f(x)=L$
+
+Details
+
+By comparing Definition 1 with the definitions of one-sided limits, we see that the following is true.
+
+3
+
+$\lim _{x \rightarrow a} f(x)=L \quad$ if and only if $\quad \lim _{x \rightarrow a^{-}} f(x)=L \quad$ and $\quad \lim _{x \rightarrow a^{+}} f(x)=L$
+
+<!-- START OF EXAMPLE -->
+## Example 7
+
+The graph of a function $g$ is shown in Figure 10. Use it to state the values (if they exist) of the following:
+
+(a) $\lim _{x \rightarrow 2^{-}} g(x)$
+
+(b) $\lim _{x \rightarrow 2^{+}} g(x)$
+
+(c) $\lim _{x \rightarrow 2} g(x)$
+
+(d) $\lim _{x \rightarrow 5^{-}} g(x)$
+
+(e) $\lim _{x \rightarrow 5^{+}} g(x)$
+
+(f) $\lim _{x \rightarrow 5} g(x)$
+
+## Figure 10
+
+![](https://cdn.mathpix.com/cropped/2024_07_11_9ac52d66350ae1bb15aag-4.jpg?height=461&width=621&top_left_y=745&top_left_x=752)
+
+Details
+
+SOLUTION From the graph we see that the values of $g(x)$ approach 3 as $x$ approaches 2 from the left, but they approach 1 as $x$ approaches 2 from the right. Therefore
+
+(a) $\lim _{x \rightarrow 2^{-}} g(x)=3$ and
+
+(b) $\lim _{x \rightarrow 2^{+}} g(x)=1$
+
+(c) Since the left and right limits are different, we conclude from (3) that $\lim _{x \rightarrow 2} g(x)$ does not exist.
+
+The graph also shows that
+
+(d) $\lim _{x \rightarrow 5^{-}} g(x)=2$ and
+
+(e) $\lim _{x \rightarrow 5^{+}} g(x)=2$
+
+(f) This time the left and right limits are the same and so, by (3), we have
+
+$$
+\lim _{x \rightarrow 5} g(x)=2
+$$
+<!-- END OF EXAMPLE -->
+
+89 Despite this fact, notice that $g(5) \neq 2$.
+<!-- END OF TOPIC -->
