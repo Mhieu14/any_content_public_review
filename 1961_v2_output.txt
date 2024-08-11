@@ -473,6 +473,7 @@ TIP: The displayed graph will include a scatterplot of the original sample point
 | A complete list of $R$ statistical |
 | commands is available at |
 | TriolaStats.com |
+<!-- END OF TOPIC -->
 
 ## 10-2 Basic Skills and Concepts
 
@@ -489,7 +490,6 @@ c. What is the predictor variable?
 d. Assuming that there is a significant linear correlation between weight and highway fuel consumption, what is the best predicted value of highway fuel consumption of a car that weighs 3000 lb ?
 
 2. Notation What is the difference between the regression equation $\hat{y}=b_{0}+b_{1} x$ and the regression equation $y=\beta_{0}+\beta_{1} x$ ?
-<!-- END OF TOPIC -->
 
 ## 3. Best-Fit Line
 
