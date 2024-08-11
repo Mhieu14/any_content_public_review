@@ -489,6 +489,7 @@ c. What is the predictor variable?
 d. Assuming that there is a significant linear correlation between weight and highway fuel consumption, what is the best predicted value of highway fuel consumption of a car that weighs 3000 lb ?
 
 2. Notation What is the difference between the regression equation $\hat{y}=b_{0}+b_{1} x$ and the regression equation $y=\beta_{0}+\beta_{1} x$ ?
+<!-- END OF TOPIC -->
 
 ## 3. Best-Fit Line
 
@@ -647,4 +648,3 @@ a. Identify the nine residuals.
 b. Find the sum of the squares of the residuals.
 
 c. Show that the equation $\hat{y}=-10.0+0.200 x$ results in a larger sum of squares of residuals.
-<!-- END OF TOPIC -->
