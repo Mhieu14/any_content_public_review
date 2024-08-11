@@ -4,7 +4,6 @@
 
 24. Queues Repeat Exercise 18 using all of the waiting times from the two line configuration and the single line configuration in Data Set 30 "Queues" in Appendix B.
 
-<!-- START OF TOPIC -->
 # 9-2 Beyond the Basics
 
 25. Pooling Repeat Exercise 14 "IQ and Lead Exposure" by assuming that the two population standard deviations are equal, so $\sigma_{1}=\sigma_{2}$. Use the appropriate method from Part 2 of this section. Does pooling the standard deviations yield results showing greater significance?
@@ -19,7 +18,6 @@ $$
 \text { Placebo Group: } & n_{2}=22, \bar{x}_{2}=0.000, s_{2}=0.000
 \end{aligned}
 $$
-<!-- END OF TOPIC -->
 
 <!-- START OF TOPIC -->
 ## 9-3 Matched Pairs
