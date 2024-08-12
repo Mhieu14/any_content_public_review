@@ -1,3 +1,4 @@
+<!-- START OF TOPIC -->
 # 8.2 Integration by Parts
 
 Integration by parts is an integration method that enables us to find antiderivatives of certain functions for which our previous antidifferentiation methods fail, such as $\ln (x)$ and $\arctan (x)$, as well as antiderivatives of certain products of functions, such as $x^{2} \ln (x)$ and $e^{x} \sin (x)$. It leads to many of the general integral formulas in Appendix I and (next to $u$-substitution) it is one most powerful and frequently used of antidifferentiation techniques.
@@ -22,7 +23,6 @@ $$
 
 At first, this formula may not appear very promising, as it merely exchanges one integration problem for another. But in certain situations, if we choose $u(x)$ and $v(x)$ carefully, this formula exchanges a difficult integral for an easier one. We can restate the formula in slightly more compact form using differentials.
 
-<!-- START OF TOPIC -->
 ## Integration by Parts Formula
 
 If $u, v, u^{\prime}$ and $v^{\prime}$ are continuous functions,
